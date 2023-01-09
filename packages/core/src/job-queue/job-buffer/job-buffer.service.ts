@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import { InternalServerError } from '../../common/error/errors';
 import { ConfigService } from '../../config/config.service';
-import { Logger } from '../../config/logger/vendure-logger';
+import { Logger } from '../../config/logger/ecomentor-logger';
 import { Job } from '../job';
 
 import { JobBuffer } from './job-buffer';

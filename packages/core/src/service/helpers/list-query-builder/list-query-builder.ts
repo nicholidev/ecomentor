@@ -1,7 +1,7 @@
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
-import { LogicalOperator } from '@vendure/common/lib/generated-types';
-import { ID, Type } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+import { LogicalOperator } from '@ecomentor/common/lib/generated-types';
+import { ID, Type } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 import {
     Brackets,
     FindConditions,
@@ -20,7 +20,7 @@ import { UserInputError } from '../../../common/error/errors';
 import { ListQueryOptions, NullOptionals, SortParameter } from '../../../common/types/common-types';
 import { ConfigService } from '../../../config/config.service';
 import { CustomFields } from '../../../config/index';
-import { Logger } from '../../../config/logger/vendure-logger';
+import { Logger } from '../../../config/logger/ecomentor-logger';
 import { TransactionalConnection } from '../../../connection/transactional-connection';
 import { VendureEntity } from '../../../entity/base/base.entity';
 

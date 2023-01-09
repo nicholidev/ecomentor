@@ -9,8 +9,8 @@ import {
     Permission,
     QueryAssetArgs,
     QueryAssetsArgs,
-} from '@vendure/common/lib/generated-types';
-import { PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { Asset } from '../../../entity/asset/asset.entity';
 import { Administrator } from '../../../entity/index';

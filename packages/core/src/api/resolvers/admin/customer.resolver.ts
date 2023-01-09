@@ -16,8 +16,8 @@ import {
     QueryCustomersArgs,
     Success,
     UpdateCustomerResult,
-} from '@vendure/common/lib/generated-types';
-import { PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { ErrorResultUnion } from '../../../common/error/error-result';
 import { Address } from '../../../entity/address/address.entity';

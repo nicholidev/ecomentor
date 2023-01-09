@@ -1,2 +1,2 @@
-export * from './vendure-worker';
+export * from './ecomentor-worker';
 export * from './worker-health.service';

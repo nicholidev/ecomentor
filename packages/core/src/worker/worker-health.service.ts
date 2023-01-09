@@ -2,7 +2,7 @@ import { Injectable, OnModuleDestroy } from '@nestjs/common';
 import express from 'express';
 import http from 'http';
 
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config';
 
 /**
  * @description

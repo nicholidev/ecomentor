@@ -1,4 +1,4 @@
-import { VendureEvent } from '../vendure-event';
+import { VendureEvent } from '../ecomentor-event';
 
 /**
  * @description

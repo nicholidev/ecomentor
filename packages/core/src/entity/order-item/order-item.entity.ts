@@ -1,6 +1,6 @@
-import { Adjustment, AdjustmentType, TaxLine } from '@vendure/common/lib/generated-types';
-import { DeepPartial, ID } from '@vendure/common/lib/shared-types';
-import { summate } from '@vendure/common/lib/shared-utils';
+import { Adjustment, AdjustmentType, TaxLine } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial, ID } from '@ecomentor/common/lib/shared-types';
+import { summate } from '@ecomentor/common/lib/shared-utils';
 import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToOne } from 'typeorm';
 
 import { Calculated } from '../../common/calculated-decorator';

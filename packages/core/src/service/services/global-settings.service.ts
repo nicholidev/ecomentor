@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UpdateGlobalSettingsInput } from '@vendure/common/lib/generated-types';
+import { UpdateGlobalSettingsInput } from '@ecomentor/common/lib/generated-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { InternalServerError } from '../../common/error/errors';

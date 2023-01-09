@@ -1,7 +1,7 @@
 import { Logger as TypeOrmLoggerInterface, QueryRunner } from 'typeorm';
 import { LoggerOptions } from 'typeorm/logger/LoggerOptions';
 
-import { Logger } from './vendure-logger';
+import { Logger } from './ecomentor-logger';
 
 const context = 'TypeORM';
 

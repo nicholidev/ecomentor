@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import { Logger, LogLevel, VendureLogger } from './vendure-logger';
+import { Logger, LogLevel, VendureLogger } from './ecomentor-logger';
 
 const DEFAULT_CONTEXT = 'Vendure Server';
 
@@ -12,9 +12,9 @@ const DEFAULT_CONTEXT = 'Vendure Server';
  *
  * @example
  * ```ts
- * import { DefaultLogger, LogLevel, VendureConfig } from '\@vendure/core';
+ * import { DefaultLogger, LogLevel, EcomentorConfig } from '\@vendure/core';
  *
- * export config: VendureConfig = {
+ * export config: EcomentorConfig = {
  *     // ...
  *     logger: new DefaultLogger({ level: LogLevel.Debug, timestamp: false }),
  * }

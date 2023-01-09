@@ -1,11 +1,11 @@
 import { DynamicModule, Injectable, Type } from '@nestjs/common';
-import { LanguageCode } from '@vendure/common/lib/generated-types';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
 import { ConnectionOptions } from 'typeorm';
 
 import { getConfig } from './config-helpers';
 import { CustomFields } from './custom-field/custom-field-types';
 import { EntityIdStrategy } from './entity-id-strategy/entity-id-strategy';
-import { Logger, VendureLogger } from './logger/vendure-logger';
+import { Logger, VendureLogger } from './logger/ecomentor-logger';
 import {
     ApiOptions,
     AssetOptions,
@@ -17,16 +17,16 @@ import {
     OrderOptions,
     PaymentOptions,
     PromotionOptions,
-    RuntimeVendureConfig,
+    RuntimeEcomentorConfig,
     ShippingOptions,
     SystemOptions,
     TaxOptions,
-    VendureConfig,
-} from './vendure-config';
+    EcomentorConfig,
+} from './ecomentor-config';
 
 @Injectable()
-export class ConfigService implements VendureConfig {
-    private activeConfig: RuntimeVendureConfig;
+export class ConfigService implements EcomentorConfig {
+    private activeConfig: RuntimeEcomentorConfig;
 
     constructor() {
         this.activeConfig = getConfig();

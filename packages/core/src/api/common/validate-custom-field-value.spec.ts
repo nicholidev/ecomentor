@@ -1,4 +1,4 @@
-import { LanguageCode } from '@vendure/common/lib/generated-types';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
 import { fail } from 'assert';
 
 import { Injector } from '../../common/injector';

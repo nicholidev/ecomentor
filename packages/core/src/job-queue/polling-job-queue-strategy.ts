@@ -1,11 +1,11 @@
-import { JobState } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
-import { isObject } from '@vendure/common/lib/shared-utils';
+import { JobState } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { isObject } from '@ecomentor/common/lib/shared-utils';
 import { interval, race, Subject, Subscription } from 'rxjs';
 import { fromPromise } from 'rxjs/internal-compatibility';
 import { filter, switchMap, take, throttleTime } from 'rxjs/operators';
 
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config/logger/ecomentor-logger';
 
 import { InjectableJobQueueStrategy } from './injectable-job-queue-strategy';
 import { Job } from './job';

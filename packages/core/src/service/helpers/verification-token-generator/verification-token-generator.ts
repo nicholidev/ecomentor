@@ -25,7 +25,7 @@ export class VerificationTokenGenerator {
 
     /**
      * Checks the age of the verification token to see if it falls within the token duration
-     * as specified in the VendureConfig.
+     * as specified in the EcomentorConfig.
      */
     verifyVerificationToken(token: string): boolean {
         const duration = ms(this.configService.authOptions.verificationTokenDuration as string);

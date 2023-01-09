@@ -1,6 +1,6 @@
 import { defaultConfig } from './default-config';
 import { mergeConfig } from './merge-config';
-import { PartialVendureConfig, RuntimeVendureConfig } from './vendure-config';
+import { PartialEcomentorConfig, RuntimeEcomentorConfig } from './ecomentor-config';
 
 let activeConfig = defaultConfig;
 
@@ -15,7 +15,7 @@ export function resetConfig() {
  * Override the default config by merging in the supplied values. Should only be used prior to
  * bootstrapping the app.
  */
-export function setConfig(userConfig: PartialVendureConfig): void {
+export function setConfig(userConfig: PartialEcomentorConfig): void {
     activeConfig = mergeConfig(activeConfig, userConfig);
 }
 
@@ -24,6 +24,6 @@ export function setConfig(userConfig: PartialVendureConfig): void {
  * used before bootstrapping the app. In all other contexts, the {@link ConfigService}
  * should be used to access config settings.
  */
-export function getConfig(): Readonly<RuntimeVendureConfig> {
+export function getConfig(): Readonly<RuntimeEcomentorConfig> {
     return activeConfig;
 }

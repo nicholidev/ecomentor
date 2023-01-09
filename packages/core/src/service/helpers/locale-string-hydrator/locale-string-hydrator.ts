@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { LanguageCode } from '@vendure/common/lib/generated-types';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
 
 import { RequestContext } from '../../../api/common/request-context';
 import { RequestContextCacheService } from '../../../cache/request-context-cache.service';

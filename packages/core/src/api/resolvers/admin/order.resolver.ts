@@ -24,8 +24,8 @@ import {
     RefundOrderResult,
     SettlePaymentResult,
     TransitionPaymentToStateResult,
-} from '@vendure/common/lib/generated-types';
-import { PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { ErrorResultUnion, isGraphQlErrorResult } from '../../../common/error/error-result';
 import { TransactionalConnection } from '../../../connection';

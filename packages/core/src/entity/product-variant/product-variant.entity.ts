@@ -1,5 +1,5 @@
-import { CurrencyCode, GlobalFlag } from '@vendure/common/lib/generated-types';
-import { DeepPartial, ID } from '@vendure/common/lib/shared-types';
+import { CurrencyCode, GlobalFlag } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial, ID } from '@ecomentor/common/lib/shared-types';
 import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany } from 'typeorm';
 
 import { Calculated } from '../../common/calculated-decorator';

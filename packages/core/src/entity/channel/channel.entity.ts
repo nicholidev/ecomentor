@@ -1,5 +1,5 @@
-import { CurrencyCode, LanguageCode } from '@vendure/common/lib/generated-types';
-import { DeepPartial } from '@vendure/common/lib/shared-types';
+import { CurrencyCode, LanguageCode } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial } from '@ecomentor/common/lib/shared-types';
 import { Column, Entity, ManyToOne } from 'typeorm';
 
 import { VendureEntity } from '../base/base.entity';

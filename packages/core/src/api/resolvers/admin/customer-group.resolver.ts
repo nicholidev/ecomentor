@@ -9,8 +9,8 @@ import {
     Permission,
     QueryCustomerGroupArgs,
     QueryCustomerGroupsArgs,
-} from '@vendure/common/lib/generated-types';
-import { PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { CustomerGroup } from '../../../entity/customer-group/customer-group.entity';
 import { CustomerGroupService } from '../../../service/services/customer-group.service';

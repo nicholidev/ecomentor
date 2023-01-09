@@ -1,9 +1,9 @@
-import { CreateTaxCategoryInput, UpdateTaxCategoryInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateTaxCategoryInput, UpdateTaxCategoryInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { TaxCategory } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type TaxCategoryInputTypes = CreateTaxCategoryInput | UpdateTaxCategoryInput | ID;
 
@@ -15,7 +15,7 @@ type TaxCategoryInputTypes = CreateTaxCategoryInput | UpdateTaxCategoryInput | I
  * @docsCategory events
  * @docsPage Event Types
  */
-export class TaxCategoryEvent extends VendureEntityEvent<TaxCategory, TaxCategoryInputTypes> {
+export class TaxCategoryEvent extends EcomentorEntityEvent<TaxCategory, TaxCategoryInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: TaxCategory,

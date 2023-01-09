@@ -1,4 +1,4 @@
-import { StockMovementType } from '@vendure/common/lib/generated-types';
+import { StockMovementType } from '@ecomentor/common/lib/generated-types';
 import { IFieldResolver, IResolvers } from 'apollo-server-express';
 import { GraphQLSchema } from 'graphql';
 import { GraphQLDateTime, GraphQLJSON } from 'graphql-scalars';

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { Type } from '@vendure/common/lib/shared-types';
-import { isObject } from '@vendure/common/lib/shared-utils';
-import { unique } from '@vendure/common/lib/unique';
+import { Type } from '@ecomentor/common/lib/shared-types';
+import { isObject } from '@ecomentor/common/lib/shared-utils';
+import { unique } from '@ecomentor/common/lib/unique';
 
 import { RequestContext } from '../../../api/common/request-context';
 import { InternalServerError } from '../../../common/error/errors';

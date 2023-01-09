@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { PaymentMethodQuote } from '@vendure/common/lib/generated-shop-types';
+import { PaymentMethodQuote } from '@ecomentor/common/lib/generated-shop-types';
 import {
     ConfigurableOperationDefinition,
     CreatePaymentMethodInput,
     DeletionResponse,
     DeletionResult,
     UpdatePaymentMethodInput,
-} from '@vendure/common/lib/generated-types';
-import { omit } from '@vendure/common/lib/omit';
-import { DEFAULT_CHANNEL_CODE } from '@vendure/common/lib/shared-constants';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { omit } from '@ecomentor/common/lib/omit';
+import { DEFAULT_CHANNEL_CODE } from '@ecomentor/common/lib/shared-constants';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { RelationPaths } from '../../api/index';

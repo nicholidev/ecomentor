@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { GlobalFlag, StockMovementListOptions } from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
+import { GlobalFlag, StockMovementListOptions } from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { InternalServerError } from '../../common/error/errors';

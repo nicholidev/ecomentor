@@ -1,5 +1,5 @@
-import { ConfigArg } from '@vendure/common/lib/generated-types';
-import { pick } from '@vendure/common/lib/pick';
+import { ConfigArg } from '@ecomentor/common/lib/generated-types';
+import { pick } from '@ecomentor/common/lib/pick';
 
 import { RequestContext } from '../../api/common/request-context';
 import {

@@ -1,5 +1,5 @@
-import { Permission } from '@vendure/common/lib/generated-types';
-import { DeepPartial } from '@vendure/common/lib/shared-types';
+import { Permission } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial } from '@ecomentor/common/lib/shared-types';
 import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 
 import { ChannelAware } from '../../common/types/common-types';

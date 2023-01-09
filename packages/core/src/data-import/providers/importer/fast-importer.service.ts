@@ -4,9 +4,9 @@ import {
     CreateProductOptionGroupInput,
     CreateProductOptionInput,
     CreateProductVariantInput,
-} from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+} from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 
 import { RequestContext } from '../../../api/common/request-context';
 import { TransactionalConnection } from '../../../connection/transactional-connection';

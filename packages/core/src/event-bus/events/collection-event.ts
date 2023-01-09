@@ -1,9 +1,9 @@
-import { CreateCollectionInput, UpdateCollectionInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateCollectionInput, UpdateCollectionInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { Collection } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type CollectionInputTypes = CreateCollectionInput | UpdateCollectionInput | ID;
 
@@ -15,7 +15,7 @@ type CollectionInputTypes = CreateCollectionInput | UpdateCollectionInput | ID;
  * @docsPage Event Types
  * @since 1.4
  */
-export class CollectionEvent extends VendureEntityEvent<Collection, CollectionInputTypes> {
+export class CollectionEvent extends EcomentorEntityEvent<Collection, CollectionInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Collection,

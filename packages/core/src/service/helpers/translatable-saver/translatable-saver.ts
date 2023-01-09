@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { omit } from '@vendure/common/lib/omit';
-import { ID, Type } from '@vendure/common/lib/shared-types';
+import { omit } from '@ecomentor/common/lib/omit';
+import { ID, Type } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../../api/common/request-context';
 import { Translatable, TranslatedInput, Translation } from '../../../common/types/locale-types';

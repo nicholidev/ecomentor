@@ -3,3 +3,4 @@ dist
 e2e/__data__/*.sqlite
 !e2e/__data__/.gitkeep
 test-emails
+node_modules/

@@ -4,7 +4,7 @@ import {
     RegisterCustomerInput,
     UpdateCustomerInput as UpdateCustomerShopInput,
     VerifyCustomerAccountResult,
-} from '@vendure/common/lib/generated-shop-types';
+} from '@ecomentor/common/lib/generated-shop-types';
 import {
     AddNoteToCustomerInput,
     CreateAddressInput,
@@ -19,8 +19,8 @@ import {
     UpdateCustomerInput,
     UpdateCustomerNoteInput,
     UpdateCustomerResult,
-} from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { RelationPaths } from '../../api/index';

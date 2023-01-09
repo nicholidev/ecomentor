@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { GlobalFlag, LanguageCode } from '@vendure/common/lib/generated-types';
-import { normalizeString } from '@vendure/common/lib/normalize-string';
-import { unique } from '@vendure/common/lib/unique';
+import { GlobalFlag, LanguageCode } from '@ecomentor/common/lib/generated-types';
+import { normalizeString } from '@ecomentor/common/lib/normalize-string';
+import { unique } from '@ecomentor/common/lib/unique';
 import parse from 'csv-parse';
 import { Stream } from 'stream';
 
-import { InternalServerError } from '../../../common/error/errors';
-import { ConfigService } from '../../../config/config.service';
-import { CustomFieldConfig } from '../../../config/custom-field/custom-field-types';
+import { InternalServerError } from '../../../common';
+import { ConfigService } from '../../../config';
+import { CustomFieldConfig } from '../../../config';
 
 const baseTranslatableColumns = [
     'name',

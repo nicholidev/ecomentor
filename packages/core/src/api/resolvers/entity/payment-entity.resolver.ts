@@ -1,5 +1,5 @@
 import { Parent, ResolveField, Resolver } from '@nestjs/graphql';
-import { pick } from '@vendure/common/lib/pick';
+import { pick } from '@ecomentor/common/lib/pick';
 
 import { RequestContextCacheService } from '../../../cache/index';
 import { PaymentMetadata } from '../../../common/types/common-types';

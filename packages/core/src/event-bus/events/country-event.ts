@@ -1,9 +1,9 @@
-import { CreateCountryInput, UpdateCountryInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateCountryInput, UpdateCountryInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { Country } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type CountryInputTypes = CreateCountryInput | UpdateCountryInput | ID;
 
@@ -15,7 +15,7 @@ type CountryInputTypes = CreateCountryInput | UpdateCountryInput | ID;
  * @docsPage Event Types
  * @since 1.4
  */
-export class CountryEvent extends VendureEntityEvent<Country, CountryInputTypes> {
+export class CountryEvent extends EcomentorEntityEvent<Country, CountryInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Country,

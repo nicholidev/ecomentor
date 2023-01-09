@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config/logger/ecomentor-logger';
 import { TransactionalConnection } from '../connection/transactional-connection';
 import { Administrator } from '../entity/administrator/administrator.entity';
 import { EventBus } from '../event-bus';

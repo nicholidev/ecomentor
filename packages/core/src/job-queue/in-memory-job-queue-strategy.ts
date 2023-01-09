@@ -6,13 +6,13 @@ import {
     JobState,
     NumberOperators,
     StringOperators,
-} from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
-import { notNullOrUndefined } from '@vendure/common/lib/shared-utils';
+} from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
+import { notNullOrUndefined } from '@ecomentor/common/lib/shared-utils';
 
 import { Injector } from '../common';
 import { InspectableJobQueueStrategy } from '../config/job-queue/inspectable-job-queue-strategy';
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config/logger/ecomentor-logger';
 import { ProcessContext } from '../process-context/process-context';
 
 import { Job } from './job';

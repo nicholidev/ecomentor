@@ -6,7 +6,7 @@ import {
     MutationUpdateTaxCategoryArgs,
     Permission,
     QueryTaxCategoryArgs,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 
 import { TaxCategory } from '../../../entity/tax-category/tax-category.entity';
 import { TaxCategoryService } from '../../../service/services/tax-category.service';

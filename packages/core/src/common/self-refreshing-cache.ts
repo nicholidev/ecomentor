@@ -1,6 +1,6 @@
-import { Json } from '@vendure/common/lib/shared-types';
+import { Json } from '@ecomentor/common/lib/shared-types';
 
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config/logger/ecomentor-logger';
 
 /**
  * @description

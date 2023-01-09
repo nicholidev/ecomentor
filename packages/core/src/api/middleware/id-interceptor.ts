@@ -1,6 +1,6 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
 import { GqlExecutionContext } from '@nestjs/graphql';
-import { IdOperators } from '@vendure/common/lib/generated-types';
+import { IdOperators } from '@ecomentor/common/lib/generated-types';
 import { VariableValues } from 'apollo-server-core';
 import { GraphQLNamedType, GraphQLSchema, OperationDefinitionNode } from 'graphql';
 import { Observable } from 'rxjs';

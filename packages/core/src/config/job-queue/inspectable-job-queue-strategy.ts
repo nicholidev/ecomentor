@@ -1,5 +1,5 @@
-import { JobListOptions } from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
+import { JobListOptions } from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { Job } from '../../job-queue';
 

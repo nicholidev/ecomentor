@@ -1,4 +1,4 @@
-import { Permission } from '@vendure/common/lib/generated-types';
+import { Permission } from '@ecomentor/common/lib/generated-types';
 
 /**
  * @description
@@ -61,7 +61,7 @@ export type PermissionMetadata = Required<PermissionDefinitionConfig>;
  * ```
  *
  * ```TypeScript
- * const config: VendureConfig = {
+ * const config: EcomentorConfig = {
  *   authOptions: {
  *     customPermissions: [sync],
  *   },
@@ -120,7 +120,7 @@ export class PermissionDefinition {
  * ```
  *
  * ```TypeScript
- * const config: VendureConfig = {
+ * const config: EcomentorConfig = {
  *   authOptions: {
  *     customPermissions: [wishlist],
  *   },

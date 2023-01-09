@@ -1,5 +1,5 @@
-import { Type } from '@vendure/common/lib/shared-types';
-import { assertNever } from '@vendure/common/lib/shared-utils';
+import { Type } from '@ecomentor/common/lib/shared-types';
+import { assertNever } from '@ecomentor/common/lib/shared-utils';
 import { Connection, ConnectionOptions } from 'typeorm';
 import { DateUtils } from 'typeorm/util/DateUtils';
 

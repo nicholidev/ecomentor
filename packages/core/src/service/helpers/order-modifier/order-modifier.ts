@@ -4,9 +4,9 @@ import {
     ModifyOrderInput,
     ModifyOrderResult,
     RefundOrderInput,
-} from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
-import { getGraphQlInputName, summate } from '@vendure/common/lib/shared-utils';
+} from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { getGraphQlInputName, summate } from '@ecomentor/common/lib/shared-utils';
 
 import { RequestContext } from '../../../api/common/request-context';
 import { isGraphQlErrorResult, JustErrorResults } from '../../../common/error/error-result';

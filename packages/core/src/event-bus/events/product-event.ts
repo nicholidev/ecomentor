@@ -1,9 +1,9 @@
-import { CreateProductInput, UpdateProductInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateProductInput, UpdateProductInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { Product } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type ProductInputTypes = CreateProductInput | UpdateProductInput | ID;
 
@@ -15,7 +15,7 @@ type ProductInputTypes = CreateProductInput | UpdateProductInput | ID;
  * @docsCategory events
  * @docsPage Event Types
  */
-export class ProductEvent extends VendureEntityEvent<Product, ProductInputTypes> {
+export class ProductEvent extends EcomentorEntityEvent<Product, ProductInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Product,

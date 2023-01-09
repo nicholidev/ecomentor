@@ -1,5 +1,5 @@
 /* tslint:disable:no-non-null-assertion */
-import { JobListOptions, SortOrder } from '@vendure/common/lib/generated-types';
+import { JobListOptions, SortOrder } from '@ecomentor/common/lib/generated-types';
 
 import { InMemoryJobQueueStrategy } from './in-memory-job-queue-strategy';
 import { Job } from './job';

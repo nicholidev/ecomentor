@@ -1,5 +1,5 @@
-import { ConfigurableOperation } from '@vendure/common/lib/generated-types';
-import { DeepPartial } from '@vendure/common/lib/shared-types';
+import { ConfigurableOperation } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial } from '@ecomentor/common/lib/shared-types';
 import {
     Column,
     Entity,

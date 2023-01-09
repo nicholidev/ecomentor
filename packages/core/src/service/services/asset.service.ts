@@ -10,11 +10,11 @@ import {
     LogicalOperator,
     Permission,
     UpdateAssetInput,
-} from '@vendure/common/lib/generated-types';
-import { omit } from '@vendure/common/lib/omit';
-import { ID, PaginatedList, Type } from '@vendure/common/lib/shared-types';
-import { notNullOrUndefined } from '@vendure/common/lib/shared-utils';
-import { unique } from '@vendure/common/lib/unique';
+} from '@ecomentor/common/lib/generated-types';
+import { omit } from '@ecomentor/common/lib/omit';
+import { ID, PaginatedList, Type } from '@ecomentor/common/lib/shared-types';
+import { notNullOrUndefined } from '@ecomentor/common/lib/shared-utils';
+import { unique } from '@ecomentor/common/lib/unique';
 import { ReadStream as FSReadStream } from 'fs';
 import { ReadStream } from 'fs-extra';
 import { IncomingMessage } from 'http';
@@ -31,7 +31,7 @@ import { MimeTypeError } from '../../common/error/generated-graphql-admin-errors
 import { ChannelAware } from '../../common/types/common-types';
 import { getAssetType, idsAreEqual } from '../../common/utils';
 import { ConfigService } from '../../config/config.service';
-import { Logger } from '../../config/logger/vendure-logger';
+import { Logger } from '../../config/logger/ecomentor-logger';
 import { TransactionalConnection } from '../../connection/transactional-connection';
 import { Asset } from '../../entity/asset/asset.entity';
 import { OrderableAsset } from '../../entity/asset/orderable-asset.entity';

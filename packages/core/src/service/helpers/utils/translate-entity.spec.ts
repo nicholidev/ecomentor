@@ -1,4 +1,4 @@
-import { LanguageCode } from '@vendure/common/lib/generated-types';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
 
 import { Translatable, Translation } from '../../../common/types/locale-types';
 import { VendureEntity } from '../../../entity/base/base.entity';

@@ -6,7 +6,7 @@ import {
     Permission,
     ServerConfig,
     UpdateGlobalSettingsResult,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 import {
     GraphQLOutputType,
     GraphQLResolveInfo,
@@ -55,7 +55,7 @@ export class GlobalSettingsResolver {
     }
 
     /**
-     * Exposes a subset of the VendureConfig which may be of use to clients.
+     * Exposes a subset of the EcomentorConfig which may be of use to clients.
      */
     @ResolveField()
     serverConfig(@Info() info: GraphQLResolveInfo): ServerConfig {
@@ -103,7 +103,7 @@ export class GlobalSettingsResolver {
                 .filter(c => !c.internal)
                 .map(c => ({ ...c, list: !!c.list as any }))
                 .map((c: any) => {
-                    // In the VendureConfig, the relation entity is specified
+                    // In the EcomentorConfig, the relation entity is specified
                     // as the class, but the GraphQL API exposes it as a string.
                     if (c.type === 'relation') {
                         c.entity = c.entity.name;

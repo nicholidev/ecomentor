@@ -1,6 +1,6 @@
-import { LanguageCode, Permission } from '@vendure/common/lib/generated-types';
-import { ID, JsonCompatible } from '@vendure/common/lib/shared-types';
-import { isObject } from '@vendure/common/lib/shared-utils';
+import { LanguageCode, Permission } from '@ecomentor/common/lib/generated-types';
+import { ID, JsonCompatible } from '@ecomentor/common/lib/shared-types';
+import { isObject } from '@ecomentor/common/lib/shared-utils';
 import { Request } from 'express';
 import { TFunction } from 'i18next';
 

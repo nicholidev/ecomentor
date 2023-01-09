@@ -3,7 +3,7 @@ import { HealthCheckError, HealthIndicator, HealthIndicatorResult } from '@nestj
 
 import { ConfigService } from '../config/config.service';
 import { isInspectableJobQueueStrategy } from '../config/job-queue/inspectable-job-queue-strategy';
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config/logger/ecomentor-logger';
 import { JobQueue } from '../job-queue/job-queue';
 import { JobQueueService } from '../job-queue/job-queue.service';
 

@@ -1,10 +1,10 @@
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
-import { ID } from '@vendure/common/lib/shared-types';
-import { assertNever } from '@vendure/common/lib/shared-utils';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { assertNever } from '@ecomentor/common/lib/shared-utils';
 import { Observable } from 'rxjs';
 
 import { RequestContext } from '../../../api/common/request-context';
-import { Logger } from '../../../config/logger/vendure-logger';
+import { Logger } from '../../../config/logger/ecomentor-logger';
 import { Asset } from '../../../entity/asset/asset.entity';
 import { ProductVariant } from '../../../entity/product-variant/product-variant.entity';
 import { Product } from '../../../entity/product/product.entity';

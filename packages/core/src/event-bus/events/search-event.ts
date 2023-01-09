@@ -1,7 +1,7 @@
-import { SearchInput } from '@vendure/common/lib/generated-types';
+import { SearchInput } from '@ecomentor/common/lib/generated-types';
 
 import { RequestContext } from '../../api/common/request-context';
-import { VendureEvent } from '../vendure-event';
+import { VendureEvent } from '../ecomentor-event';
 
 type ExtendedSearchInput = SearchInput & {
     [extendedInputField: string]: any;

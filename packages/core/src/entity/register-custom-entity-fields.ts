@@ -1,5 +1,5 @@
-import { CustomFieldType } from '@vendure/common/lib/shared-types';
-import { assertNever } from '@vendure/common/lib/shared-utils';
+import { CustomFieldType } from '@ecomentor/common/lib/shared-types';
+import { assertNever } from '@ecomentor/common/lib/shared-utils';
 import {
     Column,
     ColumnOptions,
@@ -14,8 +14,8 @@ import {
 import { DateUtils } from 'typeorm/util/DateUtils';
 
 import { CustomFieldConfig, CustomFields } from '../config/custom-field/custom-field-types';
-import { Logger } from '../config/logger/vendure-logger';
-import { VendureConfig } from '../config/vendure-config';
+import { Logger } from '../config/logger/ecomentor-logger';
+import { EcomentorConfig } from '../config/ecomentor-config';
 
 import {
     CustomAddressFields,
@@ -63,7 +63,7 @@ const MAX_STRING_LENGTH = 65535;
  * Dynamically add columns to the custom field entity based on the CustomFields config.
  */
 function registerCustomFieldsForEntity(
-    config: VendureConfig,
+    config: EcomentorConfig,
     entityName: keyof CustomFields,
     // tslint:disable-next-line:callable-types
     ctor: { new (): any },
@@ -249,7 +249,7 @@ function getDefault(customField: CustomFieldConfig, dbEngine: ConnectionOptions[
  * Dynamically registers any custom fields with TypeORM. This function should be run at the bootstrap
  * stage of the app lifecycle, before the AppModule is initialized.
  */
-export function registerCustomEntityFields(config: VendureConfig) {
+export function registerCustomEntityFields(config: EcomentorConfig) {
     registerCustomFieldsForEntity(config, 'Address', CustomAddressFields);
     registerCustomFieldsForEntity(config, 'Administrator', CustomAdministratorFields);
     registerCustomFieldsForEntity(config, 'Asset', CustomAssetFields);

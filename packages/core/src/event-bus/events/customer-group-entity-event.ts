@@ -1,9 +1,9 @@
-import { CreateCustomerGroupInput, UpdateCustomerGroupInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateCustomerGroupInput, UpdateCustomerGroupInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { CustomerGroup } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type CustomerGroupInputTypes = CreateCustomerGroupInput | UpdateCustomerGroupInput | ID;
 
@@ -16,7 +16,7 @@ type CustomerGroupInputTypes = CreateCustomerGroupInput | UpdateCustomerGroupInp
  * @docsPage Event Types
  * @since 1.4
  */
-export class CustomerGroupEntityEvent extends VendureEntityEvent<CustomerGroup, CustomerGroupInputTypes> {
+export class CustomerGroupEntityEvent extends EcomentorEntityEvent<CustomerGroup, CustomerGroupInputTypes> {
     // TODO: Rename to CustomerGroupEvent in v2
     constructor(
         ctx: RequestContext,

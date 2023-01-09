@@ -1,7 +1,7 @@
 import { OnApplicationBootstrap, OnApplicationShutdown } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { SearchReindexResponse } from '@vendure/common/lib/generated-types';
-import { ID, Type } from '@vendure/common/lib/shared-types';
+import { SearchReindexResponse } from '@ecomentor/common/lib/generated-types';
+import { ID, Type } from '@ecomentor/common/lib/shared-types';
 import { buffer, debounceTime, delay, filter, map } from 'rxjs/operators';
 import { Column } from 'typeorm';
 
@@ -17,7 +17,7 @@ import { ProductVariantEvent } from '../../event-bus/events/product-variant-even
 import { TaxRateModificationEvent } from '../../event-bus/events/tax-rate-modification-event';
 import { JobQueueService } from '../../job-queue/job-queue.service';
 import { PluginCommonModule } from '../plugin-common.module';
-import { VendurePlugin } from '../vendure-plugin';
+import { EcomentorPlugin } from '../ecomentor-plugin';
 
 import { stockStatusExtension } from './api/api-extensions';
 import { AdminFulltextSearchResolver, ShopFulltextSearchResolver } from './api/fulltext-search.resolver';
@@ -51,9 +51,9 @@ export interface DefaultSearchReindexResponse extends SearchReindexResponse {
  *
  * @example
  * ```ts
- * import { DefaultSearchPlugin, VendureConfig } from '\@vendure/core';
+ * import { DefaultSearchPlugin, EcomentorConfig } from '\@vendure/core';
  *
- * export const config: VendureConfig = {
+ * export const config: EcomentorConfig = {
  *   // Add an instance of the plugin to the plugins array
  *   plugins: [
  *     DefaultSearchPlugin.init({
@@ -66,7 +66,7 @@ export interface DefaultSearchReindexResponse extends SearchReindexResponse {
  *
  * @docsCategory DefaultSearchPlugin
  */
-@VendurePlugin({
+@EcomentorPlugin({
     imports: [PluginCommonModule],
     providers: [
         FulltextSearchService,

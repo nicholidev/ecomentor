@@ -1,5 +1,5 @@
-import { LanguageCode } from '@vendure/common/lib/generated-types';
-import { assertNever } from '@vendure/common/lib/shared-utils';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
+import { assertNever } from '@ecomentor/common/lib/shared-utils';
 
 import { UserInputError } from '../../common/error/errors';
 import { Injector } from '../../common/injector';

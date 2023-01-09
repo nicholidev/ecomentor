@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { UpdateCustomerInput as UpdateCustomerShopInput } from '@vendure/common/lib/generated-shop-types';
+import { UpdateCustomerInput as UpdateCustomerShopInput } from '@ecomentor/common/lib/generated-shop-types';
 import {
     HistoryEntryListOptions,
     HistoryEntryType,
     UpdateAddressInput,
     UpdateCustomerInput,
-} from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList, Type } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList, Type } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { TransactionalConnection } from '../../connection/transactional-connection';

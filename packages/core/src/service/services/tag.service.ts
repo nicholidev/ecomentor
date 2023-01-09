@@ -4,9 +4,9 @@ import {
     DeletionResponse,
     DeletionResult,
     UpdateTagInput,
-} from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList, Type } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+} from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList, Type } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 
 import { RequestContext } from '../../api/common/request-context';
 import { ListQueryOptions, Taggable } from '../../common/types/common-types';

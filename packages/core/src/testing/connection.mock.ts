@@ -1,4 +1,4 @@
-import { Type } from '@vendure/common/lib/shared-types';
+import { Type } from '@ecomentor/common/lib/shared-types';
 import { AbstractRepository, EntityManager, Repository } from 'typeorm';
 
 import { MockClass } from './testing-types';

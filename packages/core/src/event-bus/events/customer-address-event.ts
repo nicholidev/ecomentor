@@ -1,9 +1,9 @@
-import { CreateAddressInput, UpdateAddressInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateAddressInput, UpdateAddressInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { Address } from '../../entity/address/address.entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 /**
  * Possible input types for Address mutations
@@ -19,7 +19,7 @@ type CustomerAddressInputTypes = CreateAddressInput | UpdateAddressInput | ID;
  * @docsPage Event Types
  * @since 1.4
  */
-export class CustomerAddressEvent extends VendureEntityEvent<Address, CustomerAddressInputTypes> {
+export class CustomerAddressEvent extends EcomentorEntityEvent<Address, CustomerAddressInputTypes> {
     constructor(
         public ctx: RequestContext,
         public entity: Address,

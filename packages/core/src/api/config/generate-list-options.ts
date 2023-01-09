@@ -1,5 +1,5 @@
 import { stitchSchemas, ValidationLevel } from '@graphql-tools/stitch';
-import { notNullOrUndefined } from '@vendure/common/lib/shared-utils';
+import { notNullOrUndefined } from '@ecomentor/common/lib/shared-utils';
 import {
     buildSchema,
     GraphQLEnumType,

@@ -3,12 +3,12 @@ import {
     MutationDeleteCustomerAddressArgs,
     MutationUpdateCustomerArgs,
     Success,
-} from '@vendure/common/lib/generated-shop-types';
+} from '@ecomentor/common/lib/generated-shop-types';
 import {
     MutationCreateCustomerAddressArgs,
     MutationUpdateCustomerAddressArgs,
     Permission,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 
 import { ForbiddenError, InternalServerError } from '../../../common/error/errors';
 import { idsAreEqual } from '../../../common/utils';

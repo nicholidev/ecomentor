@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { LanguageCode } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 import { Observable } from 'rxjs';
 import { FindOptionsUtils } from 'typeorm/find-options/FindOptionsUtils';
 
@@ -11,7 +11,7 @@ import { AsyncQueue } from '../../../common/async-queue';
 import { Translatable, Translation } from '../../../common/types/locale-types';
 import { asyncObservable, idsAreEqual } from '../../../common/utils';
 import { ConfigService } from '../../../config/config.service';
-import { Logger } from '../../../config/logger/vendure-logger';
+import { Logger } from '../../../config/logger/ecomentor-logger';
 import { TransactionalConnection } from '../../../connection/transactional-connection';
 import { FacetValue } from '../../../entity/facet-value/facet-value.entity';
 import { ProductVariant } from '../../../entity/product-variant/product-variant.entity';

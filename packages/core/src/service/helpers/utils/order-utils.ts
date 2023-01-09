@@ -1,4 +1,4 @@
-import { summate } from '@vendure/common/lib/shared-utils';
+import { summate } from '@ecomentor/common/lib/shared-utils';
 
 import { OrderItem } from '../../../entity/order-item/order-item.entity';
 import { Order } from '../../../entity/order/order.entity';

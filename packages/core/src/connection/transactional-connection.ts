@@ -1,6 +1,6 @@
-import { Injectable } from '@nestjs/common';
-import { InjectConnection } from '@nestjs/typeorm';
-import { ID, Type } from '@vendure/common/lib/shared-types';
+import {Injectable} from '@nestjs/common';
+import {InjectConnection} from '@nestjs/typeorm';
+import {ID, Type} from '@ecomentor/common/lib/shared-types';
 import {
     Connection,
     EntityManager,
@@ -9,19 +9,17 @@ import {
     FindOptionsUtils,
     ObjectType,
     Repository,
-    SelectQueryBuilder,
 } from 'typeorm';
 
-import { RequestContext } from '../api/common/request-context';
-import { TRANSACTION_MANAGER_KEY } from '../common/constants';
-import { EntityNotFoundError } from '../common/error/errors';
-import { ChannelAware, SoftDeletable } from '../common/types/common-types';
-import { Logger } from '../config/index';
-import { VendureEntity } from '../entity/base/base.entity';
+import {RequestContext} from '../api';
+import {TRANSACTION_MANAGER_KEY} from '../common/constants';
+import {ChannelAware, EntityNotFoundError, SoftDeletable} from '../common';
+import {Logger} from '../config';
+import {EcomentorEntity} from '../entity';
 
-import { removeCustomFieldsWithEagerRelations } from './remove-custom-fields-with-eager-relations';
-import { TransactionWrapper } from './transaction-wrapper';
-import { GetEntityOrThrowOptions } from './types';
+import {removeCustomFieldsWithEagerRelations} from './remove-custom-fields-with-eager-relations';
+import {TransactionWrapper} from './transaction-wrapper';
+import {GetEntityOrThrowOptions} from './types';
 
 /**
  * @description
@@ -103,7 +101,7 @@ export class TransactionalConnection {
      * inconsistent state.
      *
      * Such situations include function processed by the JobQueue or stand-alone scripts which make use
-     * of Vendure internal services.
+     * of Ecomentor internal services.
      *
      * If there is already a {@link RequestContext} object available, you should pass it in as the first
      * argument in order to create transactional context as the copy. If not, omit the first argument and an empty
@@ -194,7 +192,7 @@ export class TransactionalConnection {
      * Finds an entity of the given type by ID, or throws an `EntityNotFoundError` if none
      * is found.
      */
-    async getEntityOrThrow<T extends VendureEntity>(
+    async getEntityOrThrow<T extends EcomentorEntity>(
         ctx: RequestContext,
         entityType: Type<T>,
         id: ID,
@@ -209,8 +207,7 @@ export class TransactionalConnection {
             const delay = Math.ceil(Math.max(retryDelay || 25, 1));
             for (let attempt = 0; attempt < retriesInt; attempt++) {
                 try {
-                    const result = await this.getEntityOrThrowInternal(ctx, entityType, id, options);
-                    return result;
+                    return await this.getEntityOrThrowInternal(ctx, entityType, id, options);
                 } catch (e) {
                     err = e;
                     if (attempt < retriesInt - 1) {
@@ -222,13 +219,13 @@ export class TransactionalConnection {
         }
     }
 
-    private async getEntityOrThrowInternal<T extends VendureEntity>(
+    private async getEntityOrThrowInternal<T extends EcomentorEntity>(
         ctx: RequestContext,
         entityType: Type<T>,
         id: ID,
         options: GetEntityOrThrowOptions = {},
     ): Promise<T> {
-        let entity: T | undefined;
+        let entity: (T & ChannelAware) | null;
         if (options.channelId != null) {
             const { channelId, ...optionsWithoutChannelId } = options;
             entity = await this.findOneInChannel(
@@ -257,7 +254,7 @@ export class TransactionalConnection {
      * Like the TypeOrm `Repository.findOne()` method, but limits the results to
      * the given Channel.
      */
-    findOneInChannel<T extends ChannelAware & VendureEntity>(
+    findOneInChannel<T extends ChannelAware & EcomentorEntity>(
         ctx: RequestContext,
         entity: Type<T>,
         id: ID,
@@ -270,7 +267,6 @@ export class TransactionalConnection {
         try {
             FindOptionsUtils.applyFindManyOptionsOrConditionsToQueryBuilder(qb, options);
         } catch (e: any) {
-            // https://github.com/vendure-ecommerce/vendure/issues/1664
             // This is a failsafe to catch edge cases related to the TypeORM
             // bug described in the doc block of `removeCustomFieldsWithEagerRelations`.
             // In this case, a nested custom field relation has an eager-loaded relation,
@@ -304,7 +300,7 @@ export class TransactionalConnection {
      * Like the TypeOrm `Repository.findByIds()` method, but limits the results to
      * the given Channel.
      */
-    findByIdsInChannel<T extends ChannelAware | VendureEntity>(
+    findByIdsInChannel<T extends ChannelAware | EcomentorEntity>(
         ctx: RequestContext,
         entity: Type<T>,
         ids: ID[],

@@ -1,9 +1,9 @@
-import { JobState } from '@vendure/common/lib/generated-types';
+import { JobState } from '@ecomentor/common/lib/generated-types';
 import { Subject, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
 import { JobQueueStrategy } from '../config';
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config/logger/ecomentor-logger';
 
 import { Job } from './job';
 import { JobBufferService } from './job-buffer/job-buffer.service';

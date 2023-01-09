@@ -1,4 +1,4 @@
-import { Type } from '@vendure/common/lib/shared-types';
+import { Type } from '@ecomentor/common/lib/shared-types';
 import { Column, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 
 import { EntityIdStrategy } from '../config/entity-id-strategy/entity-id-strategy';

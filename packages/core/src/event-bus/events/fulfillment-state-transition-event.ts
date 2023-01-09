@@ -1,7 +1,7 @@
 import { RequestContext } from '../../api/common/request-context';
 import { Fulfillment } from '../../entity/fulfillment/fulfillment.entity';
 import { FulfillmentState } from '../../service/helpers/fulfillment-state-machine/fulfillment-state';
-import { VendureEvent } from '../vendure-event';
+import { VendureEvent } from '../ecomentor-event';
 
 /**
  * @description

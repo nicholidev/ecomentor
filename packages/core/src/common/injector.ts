@@ -8,7 +8,7 @@ import { Connection } from 'typeorm';
  * The Injector wraps the underlying Nestjs `ModuleRef`, allowing injection of providers
  * known to the application's dependency injection container. This is intended to enable the injection
  * of services into objects which exist outside of the Nestjs module system, e.g. the various
- * Strategies which can be supplied in the VendureConfig.
+ * Strategies which can be supplied in the EcomentorConfig.
  *
  * @docsCategory common
  */

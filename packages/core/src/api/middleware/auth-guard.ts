@@ -1,13 +1,13 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { Permission } from '@vendure/common/lib/generated-types';
+import { Permission } from '@ecomentor/common/lib/generated-types';
 import { Request, Response } from 'express';
 import { GraphQLResolveInfo } from 'graphql';
 
 import { REQUEST_CONTEXT_KEY } from '../../common/constants';
 import { ForbiddenError } from '../../common/error/errors';
 import { ConfigService } from '../../config/config.service';
-import { LogLevel } from '../../config/logger/vendure-logger';
+import { LogLevel } from '../../config/logger/ecomentor-logger';
 import { CachedSession } from '../../config/session-cache/session-cache-strategy';
 import { Customer } from '../../entity/customer/customer.entity';
 import { RequestContextService } from '../../service/helpers/request-context/request-context.service';

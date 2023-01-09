@@ -2,13 +2,13 @@ import { MiddlewareConsumer, Module, NestModule, OnApplicationShutdown } from '@
 
 import { ApiModule } from './api/api.module';
 import { Middleware, MiddlewareHandler } from './common';
-import { ConfigModule } from './config/config.module';
-import { ConfigService } from './config/config.service';
-import { Logger } from './config/logger/vendure-logger';
-import { ConnectionModule } from './connection/connection.module';
+import { ConfigModule } from './config';
+import { ConfigService } from './config';
+import { Logger } from './config';
+import { ConnectionModule } from './connection';
 import { HealthCheckModule } from './health-check/health-check.module';
 import { I18nModule } from './i18n/i18n.module';
-import { I18nService } from './i18n/i18n.service';
+import { I18nService } from './i18n';
 import { PluginModule } from './plugin/plugin.module';
 import { ProcessContextModule } from './process-context/process-context.module';
 import { ServiceModule } from './service/service.module';

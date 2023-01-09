@@ -1,4 +1,4 @@
-import { Asset } from '@vendure/common/lib/generated-types';
+import { Asset } from '@ecomentor/common/lib/generated-types';
 import { ApolloServerPlugin, GraphQLRequestListener, GraphQLServiceContext } from 'apollo-server-plugin-base';
 import { DocumentNode, GraphQLNamedType, isUnionType } from 'graphql';
 

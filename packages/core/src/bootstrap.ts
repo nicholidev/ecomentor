@@ -1,36 +1,35 @@
 import { INestApplication, INestApplicationContext } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
 import { getConnectionToken } from '@nestjs/typeorm';
-import { Type } from '@vendure/common/lib/shared-types';
+import { Type } from '@ecomentor/common/lib/shared-types';
 import cookieSession = require('cookie-session');
 import { Connection, ConnectionOptions, EntitySubscriberInterface } from 'typeorm';
-
-import { InternalServerError } from './common/error/errors';
+import { InternalServerError } from './common';
 import { getConfig, setConfig } from './config/config-helpers';
-import { DefaultLogger } from './config/logger/default-logger';
-import { Logger } from './config/logger/vendure-logger';
-import { RuntimeVendureConfig, VendureConfig } from './config/vendure-config';
-import { Administrator } from './entity/administrator/administrator.entity';
+import { DefaultLogger } from './config';
+import { Logger } from './config';
+import { RuntimeEcomentorConfig, EcomentorConfig } from './config';
+import { Administrator } from './entity';
 import { coreEntitiesMap } from './entity/entities';
 import { registerCustomEntityFields } from './entity/register-custom-entity-fields';
 import { runEntityMetadataModifiers } from './entity/run-entity-metadata-modifiers';
 import { setEntityIdStrategy } from './entity/set-entity-id-strategy';
 import { validateCustomFieldsConfig } from './entity/validate-custom-fields-config';
 import { getConfigurationFunction, getEntitiesFromPlugins } from './plugin/plugin-metadata';
-import { getPluginStartupMessages } from './plugin/plugin-utils';
+import { getPluginStartupMessages } from './plugin';
 import { setProcessContext } from './process-context/process-context';
-import { VendureWorker } from './worker/vendure-worker';
+import { EcomentorWorker } from './worker';
+import { NestFactory } from '@nestjs/core';
 
-export type VendureBootstrapFunction = (config: VendureConfig) => Promise<INestApplication>;
+export type EcomentorBootstrapFunction = (config: EcomentorConfig) => Promise<INestApplication>;
 
 /**
  * @description
- * Bootstraps the Vendure server. This is the entry point to the application.
+ * Bootstraps the Ecomentor server. This is the entry point to the application.
  *
  * @example
  * ```TypeScript
- * import { bootstrap } from '\@vendure/core';
- * import { config } from './vendure-config';
+ * import { bootstrap } from '\@ecomentor/core';
+ * import { config } from './ecomentor-config';
  *
  * bootstrap(config).catch(err => {
  *     console.log(err);
@@ -38,10 +37,10 @@ export type VendureBootstrapFunction = (config: VendureConfig) => Promise<INestA
  * ```
  * @docsCategory
  * */
-export async function bootstrap(userConfig: Partial<VendureConfig>): Promise<INestApplication> {
+export async function bootstrap(userConfig: Partial<EcomentorConfig>): Promise<INestApplication> {
     const config = await preBootstrapConfig(userConfig);
     Logger.useLogger(config.logger);
-    Logger.info(`Bootstrapping Vendure Server (pid: ${process.pid})...`);
+    Logger.info(`Bootstrapping Ecomentor Server (pid: ${process.pid})...`);
 
     // The AppModule *must* be loaded only after the entities have been set in the
     // config, so that they are available when the AppModule decorator is evaluated.
@@ -75,16 +74,16 @@ export async function bootstrap(userConfig: Partial<VendureConfig>): Promise<INe
 
 /**
  * @description
- * Bootstraps a Vendure worker. Resolves to a {@link VendureWorker} object containing a reference to the underlying
+ * Bootstraps an Ecomentor worker. Resolves to a {@link EcomentorWorker} object containing a reference to the underlying
  * NestJs [standalone application](https://docs.nestjs.com/standalone-applications) as well as convenience
  * methods for starting the job queue and health check server.
  *
- * Read more about the [Vendure Worker]({{< relref "vendure-worker" >}}).
+ * Read more about the [Ecomentor Worker]({{< relref "Ecomentor-worker" >}}).
  *
  * @example
  * ```TypeScript
- * import { bootstrapWorker } from '\@vendure/core';
- * import { config } from './vendure-config';
+ * import { bootstrapWorker } from '\@ecomentor/core';
+ * import { config } from './ecomentor-config';
  *
  * bootstrapWorker(config)
  *   .then(worker => worker.startJobQueue())
@@ -95,12 +94,12 @@ export async function bootstrap(userConfig: Partial<VendureConfig>): Promise<INe
  * ```
  * @docsCategory worker
  * */
-export async function bootstrapWorker(userConfig: Partial<VendureConfig>): Promise<VendureWorker> {
-    const vendureConfig = await preBootstrapConfig(userConfig);
-    const config = disableSynchronize(vendureConfig);
-    config.logger.setDefaultContext?.('Vendure Worker');
+export async function bootstrapWorker(userConfig: Partial<EcomentorConfig>): Promise<EcomentorWorker> {
+    const EcomentorConfig = await preBootstrapConfig(userConfig);
+    const config = disableSynchronize(EcomentorConfig);
+    config.logger.setDefaultContext?.('Ecomentor Worker');
     Logger.useLogger(config.logger);
-    Logger.info(`Bootstrapping Vendure Worker (pid: ${process.pid})...`);
+    Logger.info(`Bootstrapping Ecomentor Worker (pid: ${process.pid})...`);
 
     setProcessContext('worker');
     DefaultLogger.hideNestBoostrapLogs();
@@ -113,16 +112,16 @@ export async function bootstrapWorker(userConfig: Partial<VendureConfig>): Promi
     workerApp.useLogger(new Logger());
     workerApp.enableShutdownHooks();
     await validateDbTablesForWorker(workerApp);
-    Logger.info('Vendure Worker is ready');
-    return new VendureWorker(workerApp);
+    Logger.info('Ecomentor Worker is ready');
+    return new EcomentorWorker(workerApp);
 }
 
 /**
  * Setting the global config must be done prior to loading the AppModule.
  */
 export async function preBootstrapConfig(
-    userConfig: Partial<VendureConfig>,
-): Promise<Readonly<RuntimeVendureConfig>> {
+    userConfig: Partial<EcomentorConfig>,
+): Promise<Readonly<RuntimeEcomentorConfig>> {
     if (userConfig) {
         setConfig(userConfig);
     }
@@ -133,6 +132,7 @@ export async function preBootstrapConfig(
         dbConnectionOptions: {
             entities,
             subscribers: [
+                // @ts-ignore
                 ...(userConfig.dbConnectionOptions?.subscribers ?? []),
                 ...(Object.values(coreSubscribersMap) as Array<Type<EntitySubscriberInterface>>),
             ],
@@ -157,7 +157,7 @@ export async function preBootstrapConfig(
 /**
  * Initialize any configured plugins.
  */
-async function runPluginConfigurations(config: RuntimeVendureConfig): Promise<RuntimeVendureConfig> {
+async function runPluginConfigurations(config: RuntimeEcomentorConfig): Promise<RuntimeEcomentorConfig> {
     for (const plugin of config.plugins) {
         const configFn = getConfigurationFunction(plugin);
         if (typeof configFn === 'function') {
@@ -170,7 +170,7 @@ async function runPluginConfigurations(config: RuntimeVendureConfig): Promise<Ru
 /**
  * Returns an array of core entities and any additional entities defined in plugins.
  */
-export async function getAllEntities(userConfig: Partial<VendureConfig>): Promise<Array<Type<any>>> {
+export async function getAllEntities(userConfig: Partial<EcomentorConfig>): Promise<Array<Type<any>>> {
     const coreEntities = Object.values(coreEntitiesMap) as Array<Type<any>>;
     const pluginEntities = getEntitiesFromPlugins(userConfig.plugins);
 
@@ -192,7 +192,7 @@ export async function getAllEntities(userConfig: Partial<VendureConfig>): Promis
  * If the 'bearer' tokenMethod is being used, then we automatically expose the authTokenHeaderKey header
  * in the CORS options, making sure to preserve any user-configured exposedHeaders.
  */
-function setExposedHeaders(config: Readonly<RuntimeVendureConfig>) {
+function setExposedHeaders(config: Readonly<RuntimeEcomentorConfig>) {
     const { tokenMethod } = config.authOptions;
     const isUsingBearerToken =
         tokenMethod === 'bearer' || (Array.isArray(tokenMethod) && tokenMethod.includes('bearer'));
@@ -217,7 +217,7 @@ function setExposedHeaders(config: Readonly<RuntimeVendureConfig>) {
     }
 }
 
-function logWelcomeMessage(config: RuntimeVendureConfig) {
+function logWelcomeMessage(config: RuntimeEcomentorConfig) {
     let version: string;
     try {
         version = require('../package.json').version;
@@ -233,7 +233,7 @@ function logWelcomeMessage(config: RuntimeVendureConfig) {
         ...getPluginStartupMessages().map(({ label, path }) => [label, pathToUrl(path)] as const),
     );
     const columnarGreetings = arrangeCliGreetingsInColumns(apiCliGreetings);
-    const title = `Vendure server (v${version}) now running on port ${port}`;
+    const title = `Ecomentor server (v${version}) now running on port ${port}`;
     const maxLineLength = Math.max(title.length, ...columnarGreetings.map(l => l.length));
     const titlePadLength = title.length < maxLineLength ? Math.floor((maxLineLength - title.length) / 2) : 0;
     Logger.info(`=`.repeat(maxLineLength));
@@ -250,9 +250,9 @@ function arrangeCliGreetingsInColumns(lines: Array<readonly [string, string]>): 
 
 /**
  * Fix race condition when modifying DB
- * See: https://github.com/vendure-ecommerce/vendure/issues/152
+ *
  */
-function disableSynchronize(userConfig: Readonly<RuntimeVendureConfig>): Readonly<RuntimeVendureConfig> {
+function disableSynchronize(userConfig: Readonly<RuntimeEcomentorConfig>): Readonly<RuntimeEcomentorConfig> {
     const config = { ...userConfig };
     config.dbConnectionOptions = {
         ...userConfig.dbConnectionOptions,
@@ -262,7 +262,7 @@ function disableSynchronize(userConfig: Readonly<RuntimeVendureConfig>): Readonl
 }
 
 /**
- * Check that the Database tables exist. When running Vendure server & worker
+ * Check that the Database tables exist. When running Ecomentor server & worker
  * concurrently for the first time, the worker will attempt to access the
  * DB tables before the server has populated them (assuming synchronize = true
  * in config). This method will use polling to check the existence of a known table

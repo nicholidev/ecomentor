@@ -5,13 +5,13 @@ import { EntityIdStrategy } from './entity-id-strategy';
  * An id strategy which uses string uuids as primary keys
  * for all entities. This strategy can be configured with the
  * `entityIdStrategy` property of the `entityOptions` property
- * of {@link VendureConfig}.
+ * of {@link EcomentorConfig}.
  *
  * @example
  * ```TypeScript
- * import { UuidIdStrategy, VendureConfig } from '\@vendure/core';
+ * import { UuidIdStrategy, EcomentorConfig } from '\@vendure/core';
  *
- * export const config: VendureConfig = {
+ * export const config: EcomentorConfig = {
  *   entityOptions: {
  *     entityIdStrategy: new UuidIdStrategy(),
  *     // ...

@@ -1,5 +1,5 @@
-import { StockMovementType } from '@vendure/common/lib/generated-types';
-import { DeepPartial } from '@vendure/common/lib/shared-types';
+import { StockMovementType } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial } from '@ecomentor/common/lib/shared-types';
 import { ChildEntity, ManyToOne } from 'typeorm';
 
 import { OrderItem } from '../order-item/order-item.entity';

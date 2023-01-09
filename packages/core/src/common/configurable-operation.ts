@@ -7,14 +7,14 @@ import {
     LocalizedString,
     Maybe,
     StringFieldOption,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 import {
     ConfigArgType,
     DefaultFormComponentConfig,
     ID,
     UiComponentConfig,
-} from '@vendure/common/lib/shared-types';
-import { assertNever } from '@vendure/common/lib/shared-utils';
+} from '@ecomentor/common/lib/shared-types';
+import { assertNever } from '@ecomentor/common/lib/shared-utils';
 
 import { RequestContext } from '../api/common/request-context';
 

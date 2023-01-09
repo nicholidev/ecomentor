@@ -1,7 +1,7 @@
 import { RequestContext } from '../../api/common/request-context';
 import { Order } from '../../entity/order/order.entity';
 import { OrderState } from '../../service/helpers/order-state-machine/order-state';
-import { VendureEvent } from '../vendure-event';
+import { EcomentorEvent } from '../ecomentor-event';
 
 /**
  * @description
@@ -10,7 +10,7 @@ import { VendureEvent } from '../vendure-event';
  * @docsCategory events
  * @docsPage Event Types
  */
-export class OrderStateTransitionEvent extends VendureEvent {
+export class OrderStateTransitionEvent extends EcomentorEvent {
     constructor(
         public fromState: OrderState,
         public toState: OrderState,

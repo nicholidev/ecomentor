@@ -1,5 +1,5 @@
 import { Args, Parent, ResolveField, Resolver } from '@nestjs/graphql';
-import { HistoryEntryListOptions, OrderHistoryArgs, SortOrder } from '@vendure/common/lib/generated-types';
+import { HistoryEntryListOptions, OrderHistoryArgs, SortOrder } from '@ecomentor/common/lib/generated-types';
 
 import { assertFound } from '../../../common/utils';
 import { Order } from '../../../entity/order/order.entity';

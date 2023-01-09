@@ -1,11 +1,11 @@
-import { isClassInstance, isObject } from '@vendure/common/lib/shared-utils';
-import { simpleDeepClone } from '@vendure/common/lib/simple-deep-clone';
+import { isClassInstance, isObject } from '@ecomentor/common/lib/shared-utils';
+import { simpleDeepClone } from '@ecomentor/common/lib/simple-deep-clone';
 
-import { PartialVendureConfig, VendureConfig } from './vendure-config';
+import { PartialEcomentorConfig, EcomentorConfig } from './ecomentor-config';
 
 /**
  * @description
- * Performs a deep merge of two VendureConfig objects. Unlike `Object.assign()` the `target` object is
+ * Performs a deep merge of two EcomentorConfig objects. Unlike `Object.assign()` the `target` object is
  * not mutated, instead the function returns a new object which is the result of deeply merging the
  * values of `source` into `target`.
  *
@@ -27,7 +27,7 @@ import { PartialVendureConfig, VendureConfig } from './vendure-config';
  *
  * @docsCategory configuration
  */
-export function mergeConfig<T extends VendureConfig>(target: T, source: PartialVendureConfig, depth = 0): T {
+export function mergeConfig<T extends EcomentorConfig>(target: T, source: PartialEcomentorConfig, depth = 0): T {
     if (!source) {
         return target;
     }

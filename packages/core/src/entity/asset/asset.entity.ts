@@ -1,5 +1,5 @@
-import { AssetType } from '@vendure/common/lib/generated-types';
-import { DeepPartial } from '@vendure/common/lib/shared-types';
+import { AssetType } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial } from '@ecomentor/common/lib/shared-types';
 import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 
 import { ChannelAware, Taggable } from '../../common/types/common-types';

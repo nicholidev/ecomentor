@@ -9,14 +9,14 @@ import {
     RelationCustomFieldConfig as GraphQLRelationCustomFieldConfig,
     StringCustomFieldConfig as GraphQLStringCustomFieldConfig,
     TextCustomFieldConfig as GraphQLTextCustomFieldConfig,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 import {
     CustomFieldsObject,
     CustomFieldType,
     DefaultFormComponentId,
     Type,
     UiComponentConfig,
-} from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/shared-types';
 
 import { Injector } from '../../common/injector';
 import { VendureEntity } from '../../entity/base/base.entity';

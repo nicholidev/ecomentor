@@ -2,13 +2,13 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import path from 'path';
-import { Connection, ConnectionOptions, createConnection } from 'typeorm';
-import { MysqlDriver } from 'typeorm/driver/mysql/MysqlDriver';
-import { camelCase } from 'typeorm/util/StringUtils';
+import {Connection, ConnectionOptions, createConnection} from 'typeorm';
+import {MysqlDriver} from 'typeorm/driver/mysql/MysqlDriver';
+import {camelCase} from 'typeorm/util/StringUtils';
 
-import { preBootstrapConfig } from './bootstrap';
-import { resetConfig } from './config/config-helpers';
-import { VendureConfig } from './config/vendure-config';
+import {preBootstrapConfig} from './bootstrap';
+import {resetConfig} from './config/config-helpers';
+import {EcomentorConfig} from './config';
 
 /**
  * @description
@@ -37,12 +37,12 @@ export interface MigrationOptions {
  *
  * @docsCategory migration
  */
-export async function runMigrations(userConfig: Partial<VendureConfig>) {
+export async function runMigrations(userConfig: Partial<EcomentorConfig>) {
     const config = await preBootstrapConfig(userConfig);
     const connection = await createConnection(createConnectionOptions(config));
     try {
         const migrations = await disableForeignKeysForSqLite(connection, () =>
-            connection.runMigrations({ transaction: 'each' }),
+            connection.runMigrations({transaction: 'each'}),
         );
         for (const migration of migrations) {
             console.log(chalk.green(`Successfully ran migration: ${migration.name}`));
@@ -79,12 +79,12 @@ async function checkMigrationStatus(connection: Connection) {
  *
  * @docsCategory migration
  */
-export async function revertLastMigration(userConfig: Partial<VendureConfig>) {
+export async function revertLastMigration(userConfig: Partial<EcomentorConfig>) {
     const config = await preBootstrapConfig(userConfig);
     const connection = await createConnection(createConnectionOptions(config));
     try {
         await disableForeignKeysForSqLite(connection, () =>
-            connection.undoLastMigration({ transaction: 'each' }),
+            connection.undoLastMigration({transaction: 'each'}),
         );
     } catch (e) {
         console.log(chalk.red(`An error occurred when reverting migration:`));
@@ -104,7 +104,7 @@ export async function revertLastMigration(userConfig: Partial<VendureConfig>) {
  *
  * @docsCategory migration
  */
-export async function generateMigration(userConfig: Partial<VendureConfig>, options: MigrationOptions) {
+export async function generateMigration(userConfig: Partial<EcomentorConfig>, options: MigrationOptions) {
     const config = await preBootstrapConfig(userConfig);
     const connection = await createConnection(createConnectionOptions(config));
 
@@ -120,38 +120,38 @@ export async function generateMigration(userConfig: Partial<VendureConfig>, opti
         sqlInMemory.upQueries.forEach(upQuery => {
             upSqls.push(
                 '        await queryRunner.query("' +
-                    upQuery.query.replace(new RegExp(`"`, 'g'), `\\"`) +
-                    '", ' +
-                    JSON.stringify(upQuery.parameters) +
-                    ');',
+                upQuery.query.replace(new RegExp(`"`, 'g'), `\\"`) +
+                '", ' +
+                JSON.stringify(upQuery.parameters) +
+                ');',
             );
         });
         sqlInMemory.downQueries.forEach(downQuery => {
             downSqls.push(
                 '        await queryRunner.query("' +
-                    downQuery.query.replace(new RegExp(`"`, 'g'), `\\"`) +
-                    '", ' +
-                    JSON.stringify(downQuery.parameters) +
-                    ');',
+                downQuery.query.replace(new RegExp(`"`, 'g'), `\\"`) +
+                '", ' +
+                JSON.stringify(downQuery.parameters) +
+                ');',
             );
         });
     } else {
         sqlInMemory.upQueries.forEach(upQuery => {
             upSqls.push(
                 '        await queryRunner.query(`' +
-                    upQuery.query.replace(new RegExp('`', 'g'), '\\`') +
-                    '`, ' +
-                    JSON.stringify(upQuery.parameters) +
-                    ');',
+                upQuery.query.replace(new RegExp('`', 'g'), '\\`') +
+                '`, ' +
+                JSON.stringify(upQuery.parameters) +
+                ');',
             );
         });
         sqlInMemory.downQueries.forEach(downQuery => {
             downSqls.push(
                 '        await queryRunner.query(`' +
-                    downQuery.query.replace(new RegExp('`', 'g'), '\\`') +
-                    '`, ' +
-                    JSON.stringify(downQuery.parameters) +
-                    ');',
+                downQuery.query.replace(new RegExp('`', 'g'), '\\`') +
+                '`, ' +
+                JSON.stringify(downQuery.parameters) +
+                ');',
             );
         });
     }
@@ -177,8 +177,8 @@ export async function generateMigration(userConfig: Partial<VendureConfig>, opti
     resetConfig();
 }
 
-function createConnectionOptions(userConfig: Partial<VendureConfig>): ConnectionOptions {
-    return Object.assign({ logging: ['query', 'error', 'schema'] }, userConfig.dbConnectionOptions, {
+function createConnectionOptions(userConfig: Partial<EcomentorConfig>): ConnectionOptions {
+    return Object.assign({logging: ['query', 'error', 'schema']}, userConfig.dbConnectionOptions, {
         subscribers: [],
         synchronize: false,
         migrationsRun: false,
@@ -216,7 +216,6 @@ export class ${camelCase(name, true)}${timestamp} implements MigrationInterface 
 ${upSqls.join(`
 `)}
    }
-
    public async down(queryRunner: QueryRunner): Promise<any> {
 ${downSqls.join(`
 `)}

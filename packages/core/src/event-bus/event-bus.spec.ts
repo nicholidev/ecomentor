@@ -3,7 +3,7 @@ import { QueryRunner } from 'typeorm';
 import { TransactionSubscriber } from '../connection/transaction-subscriber';
 
 import { EventBus } from './event-bus';
-import { VendureEvent } from './vendure-event';
+import { VendureEvent } from './ecomentor-event';
 
 class MockTransactionSubscriber {
     awaitRelease(queryRunner: QueryRunner): Promise<QueryRunner> {

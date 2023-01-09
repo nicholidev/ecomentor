@@ -1,4 +1,4 @@
-import { simpleDeepClone } from '@vendure/common/lib/simple-deep-clone';
+import { simpleDeepClone } from '@ecomentor/common/lib/simple-deep-clone';
 
 import { Transitions } from './types';
 

@@ -1,9 +1,9 @@
-import { CreateFacetInput, UpdateFacetInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateFacetInput, UpdateFacetInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { Facet } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type FacetInputTypes = CreateFacetInput | UpdateFacetInput | ID;
 
@@ -15,7 +15,7 @@ type FacetInputTypes = CreateFacetInput | UpdateFacetInput | ID;
  * @docsPage Event Types
  * @since 1.4
  */
-export class FacetEvent extends VendureEntityEvent<Facet, FacetInputTypes> {
+export class FacetEvent extends EcomentorEntityEvent<Facet, FacetInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Facet,

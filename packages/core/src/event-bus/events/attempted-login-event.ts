@@ -1,6 +1,6 @@
 import { RequestContext } from '../../api/common/request-context';
 import { User } from '../../entity/user/user.entity';
-import { VendureEvent } from '../vendure-event';
+import { VendureEvent } from '../ecomentor-event';
 
 /**
  * @description

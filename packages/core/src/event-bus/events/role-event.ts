@@ -1,9 +1,9 @@
-import { CreateRoleInput, UpdateRoleInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateRoleInput, UpdateRoleInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { Role } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type RoleInputTypes = CreateRoleInput | UpdateRoleInput | ID;
 
@@ -15,7 +15,7 @@ type RoleInputTypes = CreateRoleInput | UpdateRoleInput | ID;
  * @docsPage Event Types
  * @since 1.4
  */
-export class RoleEvent extends VendureEntityEvent<Role, RoleInputTypes> {
+export class RoleEvent extends EcomentorEntityEvent<Role, RoleInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Role,

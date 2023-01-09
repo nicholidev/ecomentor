@@ -8,7 +8,7 @@ import {
     Permission,
     QueryChannelArgs,
     UpdateChannelResult,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 
 import { ErrorResultUnion, isGraphQlErrorResult } from '../../../common/error/error-result';
 import { Channel } from '../../../entity/channel/channel.entity';

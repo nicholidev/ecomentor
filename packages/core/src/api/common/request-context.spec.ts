@@ -1,4 +1,4 @@
-import { CurrencyCode, LanguageCode } from '@vendure/common/lib/generated-types';
+import { CurrencyCode, LanguageCode } from '@ecomentor/common/lib/generated-types';
 
 import { CachedSession } from '../../config/session-cache/session-cache-strategy';
 import { Channel } from '../../entity/channel/channel.entity';

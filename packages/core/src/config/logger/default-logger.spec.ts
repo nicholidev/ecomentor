@@ -1,5 +1,5 @@
 import { DefaultLogger } from './default-logger';
-import { Logger, LogLevel } from './vendure-logger';
+import { Logger, LogLevel } from './ecomentor-logger';
 
 describe('DefaultLogger', () => {
     let stdOutSpy: jest.SpyInstance;

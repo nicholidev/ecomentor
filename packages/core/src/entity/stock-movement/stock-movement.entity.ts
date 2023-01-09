@@ -1,4 +1,4 @@
-import { StockMovementType } from '@vendure/common/lib/generated-types';
+import { StockMovementType } from '@ecomentor/common/lib/generated-types';
 import { Column, Entity, ManyToOne, TableInheritance } from 'typeorm';
 
 import { VendureEntity } from '../base/base.entity';

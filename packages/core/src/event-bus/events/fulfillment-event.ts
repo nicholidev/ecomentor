@@ -1,9 +1,9 @@
-import { ConfigurableOperationInput } from '@vendure/common/lib/generated-types';
+import { ConfigurableOperationInput } from '@ecomentor/common/lib/generated-types';
 
 import { RequestContext } from '../../api';
 import { Order, OrderItem } from '../../entity';
 import { Fulfillment } from '../../entity/fulfillment/fulfillment.entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 /**
  * @description
@@ -24,7 +24,7 @@ type CreateFulfillmentInput = {
  * @docsPage Event Types
  * @since 1.4
  */
-export class FulfillmentEvent extends VendureEntityEvent<Fulfillment, CreateFulfillmentInput> {
+export class FulfillmentEvent extends EcomentorEntityEvent<Fulfillment, CreateFulfillmentInput> {
     constructor(ctx: RequestContext, entity: Fulfillment, input?: CreateFulfillmentInput) {
         super(entity, 'created', ctx, input);
     }

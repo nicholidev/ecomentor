@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigurableOperationInput } from '@vendure/common/lib/generated-types';
-import { normalizeString } from '@vendure/common/lib/normalize-string';
-import { notNullOrUndefined } from '@vendure/common/lib/shared-utils';
+import { ConfigurableOperationInput } from '@ecomentor/common/lib/generated-types';
+import { normalizeString } from '@ecomentor/common/lib/normalize-string';
+import { notNullOrUndefined } from '@ecomentor/common/lib/shared-utils';
 
 import { RequestContext } from '../../../api/common/request-context';
 import {

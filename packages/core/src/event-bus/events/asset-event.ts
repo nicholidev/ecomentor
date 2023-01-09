@@ -1,9 +1,9 @@
-import { CreateAssetInput, DeleteAssetInput, UpdateAssetInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateAssetInput, DeleteAssetInput, UpdateAssetInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { Asset } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type AssetInputTypes = CreateAssetInput | UpdateAssetInput | DeleteAssetInput | ID;
 
@@ -15,7 +15,7 @@ type AssetInputTypes = CreateAssetInput | UpdateAssetInput | DeleteAssetInput | 
  * @docsPage Event Types
  * @since 1.4
  */
-export class AssetEvent extends VendureEntityEvent<Asset, AssetInputTypes> {
+export class AssetEvent extends EcomentorEntityEvent<Asset, AssetInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Asset,

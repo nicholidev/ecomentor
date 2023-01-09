@@ -1,8 +1,8 @@
 import { Module, OnApplicationShutdown } from '@nestjs/common';
 
-import { ConfigModule } from '../config/config.module';
-import { Logger } from '../config/logger/vendure-logger';
-import { ConnectionModule } from '../connection/connection.module';
+import { ConfigModule } from '../config';
+import { Logger } from '../config';
+import { ConnectionModule } from '../connection';
 import { I18nModule } from '../i18n/i18n.module';
 import { PluginModule } from '../plugin/plugin.module';
 import { ProcessContextModule } from '../process-context/process-context.module';

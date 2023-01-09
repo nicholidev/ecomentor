@@ -1,8 +1,8 @@
-import { StockMovementType } from '@vendure/common/lib/generated-types';
+import { StockMovementType } from '@ecomentor/common/lib/generated-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { StockMovement } from '../../entity/stock-movement/stock-movement.entity';
-import { VendureEvent } from '../vendure-event';
+import { VendureEvent } from '../ecomentor-event';
 
 /**
  * @description

@@ -6,9 +6,9 @@ import {
     MutationAddMembersToZoneArgs,
     MutationRemoveMembersFromZoneArgs,
     UpdateZoneInput,
-} from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+} from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 
 import { RequestContext } from '../../api/common/request-context';
 import { createSelfRefreshingCache, SelfRefreshingCache } from '../../common/self-refreshing-cache';
@@ -159,7 +159,7 @@ export class ZoneService {
         { memberIds, zoneId }: MutationAddMembersToZoneArgs,
     ): Promise<Zone> {
         const countries = await this.getCountriesFromIds(ctx, memberIds);
-        const zone = await this.connection.getEntityOrThrow(ctx, Zone, zoneId, {
+        const zone: any = await this.connection.getEntityOrThrow(ctx, Zone, zoneId, {
             relations: ['members'],
         });
         const members = unique(zone.members.concat(countries), 'id');
@@ -174,7 +174,7 @@ export class ZoneService {
         ctx: RequestContext,
         { memberIds, zoneId }: MutationRemoveMembersFromZoneArgs,
     ): Promise<Zone> {
-        const zone = await this.connection.getEntityOrThrow(ctx, Zone, zoneId, {
+        const zone: any = await this.connection.getEntityOrThrow(ctx, Zone, zoneId, {
             relations: ['members'],
         });
         zone.members = zone.members.filter(country => !memberIds.includes(country.id));

@@ -5,7 +5,7 @@ import {
     RemoveOrderItemsResult,
     SetOrderShippingMethodResult,
     UpdateOrderItemsResult,
-} from '@vendure/common/lib/generated-shop-types';
+} from '@ecomentor/common/lib/generated-shop-types';
 import {
     DeletionResponse,
     DeletionResult,
@@ -23,7 +23,7 @@ import {
     QueryEligibleShippingMethodsForDraftOrderArgs,
     SetCustomerForDraftOrderResult,
     ShippingMethodQuote,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 
 import { ErrorResultUnion, isGraphQlErrorResult, UserInputError } from '../../../common/index';
 import { TransactionalConnection } from '../../../connection/index';

@@ -8,7 +8,7 @@ import {
     MutationUpdateZoneArgs,
     Permission,
     QueryZoneArgs,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 
 import { Zone } from '../../../entity/zone/zone.entity';
 import { ZoneService } from '../../../service/services/zone.service';

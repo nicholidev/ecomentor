@@ -1,9 +1,9 @@
-import { ID, Type } from '@vendure/common/lib/shared-types';
+import { ID, Type } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { ChannelAware } from '../../common';
-import { VendureEntity } from '../../entity';
-import { VendureEvent } from '../vendure-event';
+import { EcomentorEntity } from '../../entity';
+import { EcomentorEvent } from '../ecomentor-event';
 
 /**
  * @description
@@ -14,7 +14,7 @@ import { VendureEvent } from '../vendure-event';
  * @docsPage Event Types
  * @since 1.4
  */
-export class ChangeChannelEvent<T extends ChannelAware & VendureEntity> extends VendureEvent {
+export class ChangeChannelEvent<T extends ChannelAware & EcomentorEntity> extends EcomentorEvent {
     constructor(
         public ctx: RequestContext,
         public entity: T,

@@ -1,6 +1,6 @@
 import { ApolloError } from 'apollo-server-core';
 
-import { LogLevel } from '../config/logger/vendure-logger';
+import { LogLevel } from '../config/logger/ecomentor-logger';
 
 /**
  * @description

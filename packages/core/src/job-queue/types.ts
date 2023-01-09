@@ -1,5 +1,5 @@
-import { JobState } from '@vendure/common/lib/generated-types';
-import { ID, JsonCompatible } from '@vendure/common/lib/shared-types';
+import { JobState } from '@ecomentor/common/lib/generated-types';
+import { ID, JsonCompatible } from '@ecomentor/common/lib/shared-types';
 
 import { Job } from './job';
 

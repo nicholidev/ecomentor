@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import ms from 'ms';
 
-import { AuthOptions } from '../../config/vendure-config';
+import { AuthOptions } from '../../config/ecomentor-config';
 
 /**
  * Sets the authToken either as a cookie or as a response header, depending on the

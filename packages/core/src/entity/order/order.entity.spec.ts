@@ -1,5 +1,5 @@
-import { AdjustmentType } from '@vendure/common/lib/generated-types';
-import { summate } from '@vendure/common/lib/shared-utils';
+import { AdjustmentType } from '@ecomentor/common/lib/generated-types';
+import { summate } from '@ecomentor/common/lib/shared-utils';
 
 import { createOrder, createRequestContext, taxCategoryStandard } from '../../testing/order-test-utils';
 import { ShippingLine } from '../shipping-line/shipping-line.entity';

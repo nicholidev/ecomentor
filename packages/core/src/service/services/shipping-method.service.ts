@@ -5,9 +5,9 @@ import {
     DeletionResponse,
     DeletionResult,
     UpdateShippingMethodInput,
-} from '@vendure/common/lib/generated-types';
-import { omit } from '@vendure/common/lib/omit';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { omit } from '@ecomentor/common/lib/omit';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { RelationPaths } from '../../api/index';
@@ -15,7 +15,7 @@ import { EntityNotFoundError } from '../../common/error/errors';
 import { ListQueryOptions } from '../../common/types/common-types';
 import { assertFound, idsAreEqual } from '../../common/utils';
 import { ConfigService } from '../../config/config.service';
-import { Logger } from '../../config/logger/vendure-logger';
+import { Logger } from '../../config/logger/ecomentor-logger';
 import { TransactionalConnection } from '../../connection/transactional-connection';
 import { Channel } from '../../entity/channel/channel.entity';
 import { ShippingMethodTranslation } from '../../entity/shipping-method/shipping-method-translation.entity';
@@ -54,7 +54,7 @@ export class ShippingMethodService {
     async initShippingMethods() {
         if (this.configService.shippingOptions.fulfillmentHandlers.length === 0) {
             throw new Error(
-                `No FulfillmentHandlers were found. Please ensure the VendureConfig.shippingOptions.fulfillmentHandlers array contains at least one FulfillmentHandler.`,
+                `No FulfillmentHandlers were found. Please ensure the EcomentorConfig.shippingOptions.fulfillmentHandlers array contains at least one FulfillmentHandler.`,
             );
         }
         await this.verifyShippingMethods();

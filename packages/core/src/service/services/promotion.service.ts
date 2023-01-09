@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ApplyCouponCodeResult } from '@vendure/common/lib/generated-shop-types';
+import { ApplyCouponCodeResult } from '@ecomentor/common/lib/generated-shop-types';
 import {
     AssignPromotionsToChannelInput,
     ConfigurableOperation,
@@ -11,10 +11,10 @@ import {
     RemovePromotionsFromChannelInput,
     UpdatePromotionInput,
     UpdatePromotionResult,
-} from '@vendure/common/lib/generated-types';
-import { omit } from '@vendure/common/lib/omit';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+} from '@ecomentor/common/lib/generated-types';
+import { omit } from '@ecomentor/common/lib/omit';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 
 import { RequestContext } from '../../api/common/request-context';
 import { RelationPaths } from '../../api/index';

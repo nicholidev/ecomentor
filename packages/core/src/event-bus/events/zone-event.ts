@@ -1,9 +1,9 @@
-import { CreateZoneInput, UpdateZoneInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateZoneInput, UpdateZoneInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { Zone } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type ZoneInputTypes = CreateZoneInput | UpdateZoneInput | ID;
 
@@ -15,7 +15,7 @@ type ZoneInputTypes = CreateZoneInput | UpdateZoneInput | ID;
  * @docsCategory events
  * @docsPage Event Types
  */
-export class ZoneEvent extends VendureEntityEvent<Zone, ZoneInputTypes> {
+export class ZoneEvent extends EcomentorEntityEvent<Zone, ZoneInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Zone,

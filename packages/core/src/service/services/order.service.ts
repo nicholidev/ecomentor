@@ -7,7 +7,7 @@ import {
     RemoveOrderItemsResult,
     SetOrderShippingMethodResult,
     UpdateOrderItemsResult,
-} from '@vendure/common/lib/generated-shop-types';
+} from '@ecomentor/common/lib/generated-shop-types';
 import {
     AddFulfillmentToOrderResult,
     AddManualPaymentToOrderResult,
@@ -34,10 +34,10 @@ import {
     ShippingMethodQuote,
     TransitionPaymentToStateResult,
     UpdateOrderNoteInput,
-} from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
-import { summate } from '@vendure/common/lib/shared-utils';
-import { unique } from '@vendure/common/lib/unique';
+} from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
+import { summate } from '@ecomentor/common/lib/shared-utils';
+import { unique } from '@ecomentor/common/lib/unique';
 import { FindOptionsUtils } from 'typeorm/find-options/FindOptionsUtils';
 
 import { RequestContext } from '../../api/common/request-context';

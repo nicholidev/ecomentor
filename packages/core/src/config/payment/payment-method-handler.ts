@@ -1,4 +1,4 @@
-import { ConfigArg, RefundOrderInput } from '@vendure/common/lib/generated-types';
+import { ConfigArg, RefundOrderInput } from '@ecomentor/common/lib/generated-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import {

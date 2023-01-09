@@ -10,8 +10,8 @@ import {
     QueryShippingMethodsArgs,
     QueryTestEligibleShippingMethodsArgs,
     QueryTestShippingMethodArgs,
-} from '@vendure/common/lib/generated-types';
-import { PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { ShippingMethod } from '../../../entity/shipping-method/shipping-method.entity';
 import { OrderTestingService } from '../../../service/services/order-testing.service';

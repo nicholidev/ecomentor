@@ -1,6 +1,6 @@
-import { ID } from '@vendure/common/lib/shared-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
-import { LogLevel } from '../../config/logger/vendure-logger';
+import { LogLevel } from '../../config/logger/ecomentor-logger';
 import { coreEntitiesMap } from '../../entity/entities';
 import { I18nError } from '../../i18n/i18n-error';
 

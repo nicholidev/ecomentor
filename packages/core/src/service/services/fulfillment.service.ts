@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigurableOperationInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
-import { isObject } from '@vendure/common/lib/shared-utils';
-import { unique } from '@vendure/common/lib/unique';
+import { ConfigurableOperationInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { isObject } from '@ecomentor/common/lib/shared-utils';
+import { unique } from '@ecomentor/common/lib/unique';
 import { FulfillmentLineSummary } from '@vendure/payments-plugin/e2e/graphql/generated-admin-types';
 
 import { RequestContext } from '../../api/common/request-context';

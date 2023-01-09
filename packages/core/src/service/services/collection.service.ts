@@ -11,10 +11,10 @@ import {
     PreviewCollectionVariantsInput,
     RemoveCollectionsFromChannelInput,
     UpdateCollectionInput,
-} from '@vendure/common/lib/generated-types';
-import { pick } from '@vendure/common/lib/pick';
-import { ROOT_COLLECTION_NAME } from '@vendure/common/lib/shared-constants';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { pick } from '@ecomentor/common/lib/pick';
+import { ROOT_COLLECTION_NAME } from '@ecomentor/common/lib/shared-constants';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
 import { merge } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -25,7 +25,7 @@ import { ListQueryOptions } from '../../common/types/common-types';
 import { Translated } from '../../common/types/locale-types';
 import { assertFound, idsAreEqual } from '../../common/utils';
 import { ConfigService } from '../../config/config.service';
-import { Logger } from '../../config/logger/vendure-logger';
+import { Logger } from '../../config/logger/ecomentor-logger';
 import { TransactionalConnection } from '../../connection/transactional-connection';
 import { CollectionTranslation } from '../../entity/collection/collection-translation.entity';
 import { Collection } from '../../entity/collection/collection.entity';

@@ -1,4 +1,4 @@
-import { DeepPartial } from '@vendure/common/lib/shared-types';
+import { DeepPartial } from '@ecomentor/common/lib/shared-types';
 import { Column, Entity, ManyToMany, OneToMany } from 'typeorm';
 
 import { HasCustomFields } from '../../config/custom-field/custom-field-types';

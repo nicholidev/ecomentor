@@ -1,9 +1,9 @@
-import { Type } from '@vendure/common/lib/shared-types';
+import { Type } from '@ecomentor/common/lib/shared-types';
 
 import { Job } from '../../job-queue/job';
 import { BackoffStrategy } from '../../job-queue/polling-job-queue-strategy';
 import { PluginCommonModule } from '../plugin-common.module';
-import { VendurePlugin } from '../vendure-plugin';
+import { EcomentorPlugin } from '../ecomentor-plugin';
 
 import { JobRecordBuffer } from './job-record-buffer.entity';
 import { JobRecord } from './job-record.entity';
@@ -86,9 +86,9 @@ export interface DefaultJobQueueOptions {
  *
  * @example
  * ```TypeScript
- * import { DefaultJobQueuePlugin, VendureConfig } from '\@vendure/core';
+ * import { DefaultJobQueuePlugin, EcomentorConfig } from '\@vendure/core';
  *
- * export const config: VendureConfig = {
+ * export const config: EcomentorConfig = {
  *   // Add an instance of the plugin to the plugins array
  *   plugins: [
  *     DefaultJobQueuePlugin,
@@ -108,7 +108,7 @@ export interface DefaultJobQueueOptions {
  *
  * @example
  * ```TypeScript
- * export const config: VendureConfig = {
+ * export const config: EcomentorConfig = {
  *   plugins: [
  *     DefaultJobQueuePlugin.init({
  *       pollInterval: queueName => {
@@ -137,7 +137,7 @@ export interface DefaultJobQueueOptions {
  *
  * @example
  * ```TypeScript
- * export const config: VendureConfig = {
+ * export const config: EcomentorConfig = {
  *   plugins: [
  *     DefaultJobQueuePlugin.init({
  *       pollInterval: 5000,
@@ -168,7 +168,7 @@ export interface DefaultJobQueueOptions {
  * @docsCategory JobQueue
  * @docsWeight 0
  */
-@VendurePlugin({
+@EcomentorPlugin({
     imports: [PluginCommonModule],
     entities: () =>
         DefaultJobQueuePlugin.options.useDatabaseForBuffer === true

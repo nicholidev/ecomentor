@@ -1,9 +1,9 @@
 import { DynamicModule } from '@nestjs/common';
 import { MODULE_METADATA } from '@nestjs/common/constants';
-import { Type } from '@vendure/common/lib/shared-types';
-import { notNullOrUndefined } from '@vendure/common/lib/shared-utils';
+import { Type } from '@ecomentor/common/lib/shared-types';
+import { notNullOrUndefined } from '@ecomentor/common/lib/shared-utils';
 
-import { APIExtensionDefinition, PluginConfigurationFn } from './vendure-plugin';
+import { APIExtensionDefinition, PluginConfigurationFn } from './ecomentor-plugin';
 
 export const PLUGIN_METADATA = {
     CONFIGURATION: 'configuration',

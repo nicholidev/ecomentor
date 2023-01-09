@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { ManualPaymentInput, RefundOrderInput } from '@vendure/common/lib/generated-types';
-import { DeepPartial, ID } from '@vendure/common/lib/shared-types';
-import { summate } from '@vendure/common/lib/shared-utils';
+import { ManualPaymentInput, RefundOrderInput } from '@ecomentor/common/lib/generated-types';
+import { DeepPartial, ID } from '@ecomentor/common/lib/shared-types';
+import { summate } from '@ecomentor/common/lib/shared-utils';
 
 import { RequestContext } from '../../api/common/request-context';
 import { InternalServerError } from '../../common/error/errors';

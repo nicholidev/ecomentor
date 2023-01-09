@@ -8,8 +8,8 @@ import {
     Permission,
     QueryPaymentMethodArgs,
     QueryPaymentMethodsArgs,
-} from '@vendure/common/lib/generated-types';
-import { PaginatedList } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { PaymentMethod } from '../../../entity/payment-method/payment-method.entity';
 import { PaymentMethodService } from '../../../service/services/payment-method.service';

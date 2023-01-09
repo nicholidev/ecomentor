@@ -1,12 +1,12 @@
 import {
     CreateProductOptionGroupInput,
     UpdateProductOptionGroupInput,
-} from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+} from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { ProductOptionGroup } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type ProductOptionGroupInputTypes = CreateProductOptionGroupInput | UpdateProductOptionGroupInput | ID;
 
@@ -18,7 +18,7 @@ type ProductOptionGroupInputTypes = CreateProductOptionGroupInput | UpdateProduc
  * @docsPage Event Types
  * @since 1.4
  */
-export class ProductOptionGroupEvent extends VendureEntityEvent<
+export class ProductOptionGroupEvent extends EcomentorEntityEvent<
     ProductOptionGroup,
     ProductOptionGroupInputTypes
 > {

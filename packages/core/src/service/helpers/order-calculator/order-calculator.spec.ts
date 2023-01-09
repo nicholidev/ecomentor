@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
-import { AdjustmentType, LanguageCode, TaxLine } from '@vendure/common/lib/generated-types';
-import { summate } from '@vendure/common/lib/shared-utils';
+import { AdjustmentType, LanguageCode, TaxLine } from '@ecomentor/common/lib/generated-types';
+import { summate } from '@ecomentor/common/lib/shared-utils';
 
 import { RequestContext } from '../../../api/common/request-context';
 import { RequestContextCacheService } from '../../../cache/request-context-cache.service';

@@ -1,9 +1,9 @@
-import { CreateTaxRateInput, UpdateTaxRateInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateTaxRateInput, UpdateTaxRateInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api/common/request-context';
 import { TaxRate } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type TaxRateInputTypes = CreateTaxRateInput | UpdateTaxRateInput | ID;
 
@@ -15,7 +15,7 @@ type TaxRateInputTypes = CreateTaxRateInput | UpdateTaxRateInput | ID;
  * @docsCategory events
  * @docsPage Event Types
  */
-export class TaxRateEvent extends VendureEntityEvent<TaxRate, TaxRateInputTypes> {
+export class TaxRateEvent extends EcomentorEntityEvent<TaxRate, TaxRateInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: TaxRate,

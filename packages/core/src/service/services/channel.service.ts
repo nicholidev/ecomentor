@@ -7,10 +7,10 @@ import {
     DeletionResult,
     UpdateChannelInput,
     UpdateChannelResult,
-} from '@vendure/common/lib/generated-types';
-import { DEFAULT_CHANNEL_CODE } from '@vendure/common/lib/shared-constants';
-import { ID, Type } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+} from '@ecomentor/common/lib/generated-types';
+import { DEFAULT_CHANNEL_CODE } from '@ecomentor/common/lib/shared-constants';
+import { ID, Type } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 
 import { RequestContext } from '../../api/common/request-context';
 import { ErrorResultUnion, isGraphQlErrorResult } from '../../common/error/error-result';

@@ -1,5 +1,5 @@
-import { AssetType } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { AssetType } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 import { Observable, Observer } from 'rxjs';
 
 /**

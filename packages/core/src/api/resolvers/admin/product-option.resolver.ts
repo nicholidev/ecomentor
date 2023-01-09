@@ -10,7 +10,7 @@ import {
     Permission,
     QueryProductOptionGroupArgs,
     QueryProductOptionGroupsArgs,
-} from '@vendure/common/lib/generated-types';
+} from '@ecomentor/common/lib/generated-types';
 
 import { Translated } from '../../../common/types/locale-types';
 import { ProductOptionGroup } from '../../../entity/product-option-group/product-option-group.entity';

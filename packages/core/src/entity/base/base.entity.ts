@@ -1,4 +1,4 @@
-import { DeepPartial, ID } from '@vendure/common/lib/shared-types';
+import { DeepPartial, ID } from '@ecomentor/common/lib/shared-types';
 import { CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 import { PrimaryGeneratedId } from '../entity-id.decorator';
@@ -10,8 +10,8 @@ import { PrimaryGeneratedId } from '../entity-id.decorator';
  *
  * @docsCategory entities
  */
-export abstract class VendureEntity {
-    protected constructor(input?: DeepPartial<VendureEntity>) {
+export abstract class EcomentorEntity {
+    protected constructor(input?: DeepPartial<EcomentorEntity>) {
         if (input) {
             for (const [key, value] of Object.entries(input)) {
                 (this as any)[key] = value;

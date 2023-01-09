@@ -1,4 +1,4 @@
-import { DeepPartial, ID } from '@vendure/common/lib/shared-types';
+import { DeepPartial, ID } from '@ecomentor/common/lib/shared-types';
 import { Column, Entity, ManyToOne } from 'typeorm';
 
 import { OrderableAsset } from '../asset/orderable-asset.entity';

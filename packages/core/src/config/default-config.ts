@@ -1,9 +1,9 @@
-import { LanguageCode } from '@vendure/common/lib/generated-types';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
 import {
     DEFAULT_AUTH_TOKEN_HEADER_KEY,
     SUPER_ADMIN_USER_IDENTIFIER,
     SUPER_ADMIN_USER_PASSWORD,
-} from '@vendure/common/lib/shared-constants';
+} from '@ecomentor/common/lib/shared-constants';
 
 import { TypeORMHealthCheckStrategy } from '../health-check/typeorm-health-check-strategy';
 import { InMemoryJobQueueStrategy } from '../job-queue/in-memory-job-queue-strategy';
@@ -37,7 +37,7 @@ import { defaultShippingCalculator } from './shipping-method/default-shipping-ca
 import { defaultShippingEligibilityChecker } from './shipping-method/default-shipping-eligibility-checker';
 import { DefaultTaxLineCalculationStrategy } from './tax/default-tax-line-calculation-strategy';
 import { DefaultTaxZoneStrategy } from './tax/default-tax-zone-strategy';
-import { RuntimeVendureConfig } from './vendure-config';
+import { RuntimeEcomentorConfig } from './ecomentor-config';
 
 /**
  * @description
@@ -45,7 +45,7 @@ import { RuntimeVendureConfig } from './vendure-config';
  *
  * @docsCategory configuration
  */
-export const defaultConfig: RuntimeVendureConfig = {
+export const defaultConfig: RuntimeEcomentorConfig = {
     defaultChannelToken: null,
     defaultLanguageCode: LanguageCode.en,
     logger: new DefaultLogger(),

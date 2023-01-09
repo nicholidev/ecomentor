@@ -1,9 +1,9 @@
-import { CreateChannelInput, UpdateChannelInput } from '@vendure/common/lib/generated-types';
-import { ID } from '@vendure/common/lib/shared-types';
+import { CreateChannelInput, UpdateChannelInput } from '@ecomentor/common/lib/generated-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContext } from '../../api';
 import { Channel } from '../../entity';
-import { VendureEntityEvent } from '../vendure-entity-event';
+import { EcomentorEntityEvent } from '../ecomentor-entity-event';
 
 type ChannelInputTypes = CreateChannelInput | UpdateChannelInput | ID;
 
@@ -15,7 +15,7 @@ type ChannelInputTypes = CreateChannelInput | UpdateChannelInput | ID;
  * @docsPage Event Types
  * @since 1.4
  */
-export class ChannelEvent extends VendureEntityEvent<Channel, ChannelInputTypes> {
+export class ChannelEvent extends EcomentorEntityEvent<Channel, ChannelInputTypes> {
     constructor(
         ctx: RequestContext,
         entity: Channel,

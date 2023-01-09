@@ -1,16 +1,16 @@
-import { LanguageCode } from '@vendure/common/lib/generated-types';
-import { Omit } from '@vendure/common/lib/omit';
-import { ID } from '@vendure/common/lib/shared-types';
+import { LanguageCode } from '@ecomentor/common/lib/generated-types';
+import { Omit } from '@ecomentor/common/lib/omit';
+import { ID } from '@ecomentor/common/lib/shared-types';
 
-import { RequestContext } from '../api/common/request-context';
-import { Channel } from '../entity/channel/channel.entity';
-import { OrderItem } from '../entity/order-item/order-item.entity';
-import { OrderLine } from '../entity/order-line/order-line.entity';
-import { Order } from '../entity/order/order.entity';
-import { ProductVariant } from '../entity/product-variant/product-variant.entity';
-import { TaxCategory } from '../entity/tax-category/tax-category.entity';
-import { TaxRate } from '../entity/tax-rate/tax-rate.entity';
-import { Zone } from '../entity/zone/zone.entity';
+import { RequestContext } from '../api';
+import { Channel } from '../entity';
+import { OrderItem } from '../entity';
+import { OrderLine } from '../entity';
+import { Order } from '../entity';
+import { ProductVariant } from '../entity';
+import { TaxCategory } from '../entity';
+import { TaxRate } from '../entity';
+import { Zone } from '../entity';
 
 export type SimpleLine = { productVariantId: ID; quantity: number; lineId: ID; customFields?: any };
 

@@ -1,6 +1,6 @@
 import { RequestContext } from '../../api/common/request-context';
 import { TaxRate } from '../../entity';
-import { VendureEvent } from '../vendure-event';
+import { VendureEvent } from '../ecomentor-event';
 
 /**
  * @description

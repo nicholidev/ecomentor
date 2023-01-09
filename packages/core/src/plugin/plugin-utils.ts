@@ -1,7 +1,7 @@
 import { RequestHandler } from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
-import { Logger, RuntimeVendureConfig, VendureConfig } from '../config';
+import { Logger, RuntimeEcomentorConfig, EcomentorConfig } from '../config';
 
 /**
  * @description
@@ -16,7 +16,7 @@ import { Logger, RuntimeVendureConfig, VendureConfig } from '../config';
  * // running some service which we want to access via the `/my-plugin/`
  * // route of the main Vendure server.
  * \@VendurePlugin({
- *   configuration: (config: Required<VendureConfig>) => {
+ *   configuration: (config: Required<EcomentorConfig>) => {
  *       config.apiOptions.middleware.push({
  *           handler: createProxyHandler({
  *               label: 'Admin UI',

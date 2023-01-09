@@ -1,7 +1,7 @@
 import { Args, Parent, ResolveField, Resolver } from '@nestjs/graphql';
-import { CurrencyCode, StockMovementListOptions } from '@vendure/common/lib/generated-types';
-import { DEFAULT_CHANNEL_CODE } from '@vendure/common/lib/shared-constants';
-import { PaginatedList } from '@vendure/common/lib/shared-types';
+import { CurrencyCode, StockMovementListOptions } from '@ecomentor/common/lib/generated-types';
+import { DEFAULT_CHANNEL_CODE } from '@ecomentor/common/lib/shared-constants';
+import { PaginatedList } from '@ecomentor/common/lib/shared-types';
 
 import { RequestContextCacheService } from '../../../cache/request-context-cache.service';
 import { Translated } from '../../../common/types/locale-types';

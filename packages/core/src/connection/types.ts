@@ -1,4 +1,4 @@
-import { ID } from '@vendure/common/lib/shared-types';
+import { ID } from '@ecomentor/common/lib/shared-types';
 import { FindOneOptions } from 'typeorm';
 
 /**

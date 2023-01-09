@@ -1,11 +1,9 @@
-# Vendure
-
-A headless [GraphQL](https://graphql.org/) ecommerce framework built on [Node.js](https://nodejs.org) with [Nest](https://nestjs.com/) with [TypeScript](http://www.typescriptlang.org/).
+# Ecomentor
 
 ```bash
-$ npm install @vendure/core
+$ npm install @ecomentor/core
 ```
 
-### [www.vendure.io](https://www.vendure.io/)
+### [www.ecomentor.com](https://www.ecomentor.com/)
 
-See the [Getting Started](https://www.vendure.io/docs/getting-started/) guide for instructions on use.
+See the [Getting Started](https://www.ecomentor.com/docs/getting-started/) guide for instructions on use.

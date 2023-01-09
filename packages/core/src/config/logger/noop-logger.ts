@@ -1,4 +1,4 @@
-import { VendureLogger } from './vendure-logger';
+import { VendureLogger } from './ecomentor-logger';
 
 /**
  * A logger that does not log.

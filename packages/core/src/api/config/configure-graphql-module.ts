@@ -1,7 +1,7 @@
 import { DynamicModule } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { GqlModuleOptions, GraphQLModule, GraphQLTypesLoader } from '@nestjs/graphql';
-import { notNullOrUndefined } from '@vendure/common/lib/shared-utils';
+import { notNullOrUndefined } from '@ecomentor/common/lib/shared-utils';
 import { buildSchema, extendSchema, GraphQLSchema, printSchema, ValidationContext } from 'graphql';
 import path from 'path';
 

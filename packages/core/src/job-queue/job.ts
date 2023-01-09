@@ -1,7 +1,7 @@
-import { JobState } from '@vendure/common/lib/generated-types';
-import { isClassInstance, isObject } from '@vendure/common/lib/shared-utils';
+import { JobState } from '@ecomentor/common/lib/generated-types';
+import { isClassInstance, isObject } from '@ecomentor/common/lib/shared-utils';
 
-import { Logger } from '../config/logger/vendure-logger';
+import { Logger } from '../config/logger/ecomentor-logger';
 
 import { JobConfig, JobData } from './types';
 

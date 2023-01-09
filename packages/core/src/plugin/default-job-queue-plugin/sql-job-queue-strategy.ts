@@ -1,10 +1,10 @@
-import { JobListOptions, JobState } from '@vendure/common/lib/generated-types';
-import { ID, PaginatedList } from '@vendure/common/lib/shared-types';
+import { JobListOptions, JobState } from '@ecomentor/common/lib/generated-types';
+import { ID, PaginatedList } from '@ecomentor/common/lib/shared-types';
 import { Brackets, Connection, EntityManager, FindConditions, In, LessThan } from 'typeorm';
 
 import { Injector } from '../../common/injector';
 import { InspectableJobQueueStrategy, JobQueueStrategy } from '../../config';
-import { Logger } from '../../config/logger/vendure-logger';
+import { Logger } from '../../config/logger/ecomentor-logger';
 import { TransactionalConnection } from '../../connection/transactional-connection';
 import { Job, JobData } from '../../job-queue';
 import { PollingJobQueueStrategy } from '../../job-queue/polling-job-queue-strategy';

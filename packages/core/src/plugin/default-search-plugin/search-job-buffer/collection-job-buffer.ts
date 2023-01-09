@@ -1,5 +1,5 @@
-import { ID } from '@vendure/common/lib/shared-types';
-import { unique } from '@vendure/common/lib/unique';
+import { ID } from '@ecomentor/common/lib/shared-types';
+import { unique } from '@ecomentor/common/lib/unique';
 
 import { Job, JobBuffer } from '../../../job-queue/index';
 import { ApplyCollectionFiltersJobData } from '../../../service/services/collection.service';

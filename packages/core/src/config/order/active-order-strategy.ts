@@ -56,7 +56,7 @@ export const ACTIVE_ORDER_INPUT_FIELD_NAME = 'activeOrderInput';
  *
  * @example
  * ```TypeScript
- * import { ID } from '\@vendure/common/lib/shared-types';
+ * import { ID } from '\@ecomentor/common/lib/shared-types';
  * import {
  *   ActiveOrderStrategy,
  *   CustomerService,
