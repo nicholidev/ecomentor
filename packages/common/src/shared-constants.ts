@@ -13,10 +13,10 @@ export const SUPER_ADMIN_USER_PASSWORD = 'superadmin';
 export const CUSTOMER_ROLE_CODE = '__customer_role__';
 export const CUSTOMER_ROLE_DESCRIPTION = 'Customer';
 export const ROOT_COLLECTION_NAME = '__root_collection__';
-export const DEFAULT_AUTH_TOKEN_HEADER_KEY = 'vendure-auth-token';
+export const DEFAULT_AUTH_TOKEN_HEADER_KEY = 'ecomentor-auth-token';
 
-// An environment variable which is set when the @vendure/create
+// An environment variable which is set when the @ecomentor/create
 // script is run. Can be used to modify normal behaviour
 // to fit with the initial create task.
-export type CREATING_VENDURE_APP = 'CREATING_VENDURE_APP';
-export const CREATING_VENDURE_APP: CREATING_VENDURE_APP = 'CREATING_VENDURE_APP';
+export type CREATING_ECOMENTOR_APP = 'CREATING_ECOMENTOR_APP';
+export const CREATING_ECOMENTOR_APP: CREATING_ECOMENTOR_APP = 'CREATING_ECOMENTOR_APP';

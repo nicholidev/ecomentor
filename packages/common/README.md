@@ -1,3 +1,23 @@
-# @vendure/common
+# @ecomentor/common
 
-This package contains a set of common utility functions and TypeScript types used by multiple Vendure packages. It is not intended to be directly depended upon by an end-user project.
+Main Utilities of Ecomentor
+
+#### Extension Host Types
+
+#### Filter
+
+#### Normalize
+
+#### Omits
+
+#### Pick
+
+#### Shared
+
+#### Simple Deep Clone
+
+####  Unique
+
+### Author
+
+[Nicholi Jin](https://github.com/nicholidev)

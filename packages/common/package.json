@@ -1,17 +1,27 @@
 {
-  "name": "@vendure/common",
-  "version": "1.9.1",
+  "name": "@ecomentor/common",
+  "description": "Ecomentor Common",
+  "version": "1.0.10",
   "main": "index.js",
   "license": "MIT",
+  "keywords": [
+    "Ecomentor",
+    "Ecommerce"
+  ],
   "scripts": {
     "watch": "tsc -p ./tsconfig.build.json -w",
     "build": "rimraf lib && tsc -p ./tsconfig.build.json",
     "lint": "tslint --fix --project ./",
     "test": "jest --config ./jest.config.js",
-    "ci": "yarn build"
+    "ci": "npm build",
+    "patch": "npm version patch",
+    "publish": "npm publish"
   },
-  "homepage": "https://www.vendure.io/",
-  "funding": "https://github.com/sponsors/michaelbromley",
+  "homepage": "https://www.ecomentor.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicholidev/ecomentor/"
+  },
   "publishConfig": {
     "access": "public"
   },
